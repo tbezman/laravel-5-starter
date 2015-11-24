@@ -1,7 +1,7 @@
 {
   "styles": {
-    "input": "public/styles/main.scss",
-    "output": "public/styles/"
+    "input": "./public/styles/main.scss",
+    "output": "./public/styles/"
   },
 
   "scripts": {
@@ -11,6 +11,6 @@
   },
 
   "build": {
-      "output": "public/dist/"
+      "output": "./dist/"
   }
 }

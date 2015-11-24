@@ -32,6 +32,18 @@ gulp.task('serve', ['watch'], function () {
     });
 });
 
+gulp.task('serve:dist', function () {
+    connect.server({
+        base: './dist'
+    }, function () {
+        browserSync({
+            notify: false,
+            open: false,
+            proxy: 'localhost:8000'
+        })
+    });
+});
+
 gulp.task('watch', ['styles'], function () {
     var sassWatchers = [
         config.styles.input,
@@ -40,7 +52,7 @@ gulp.task('watch', ['styles'], function () {
 
     var jsWatchers = [
         './public/scripts/*.js',
-        './public/scripts/**/*.js',
+        './public/scripts/**/*.js'
     ];
 
     sassWatchers.forEach(function (watcher) {
@@ -50,6 +62,8 @@ gulp.task('watch', ['styles'], function () {
     jsWatchers.forEach(function (watcher) {
         gulp.watch(watcher, [browserSync.reload])
     })
+
+    gulp.watch('./public/index.html', browserSync.reload);
 });
 
 gulp.task('dist', function () {
@@ -66,5 +80,12 @@ gulp.task('dist', function () {
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('.css', minifyCss()))
         .pipe(gulp.dest(config.build.output));
+
+    gulp.src([
+        './public/.htaccess',
+        './public/index.php',
+        './public/favicon.ico',
+        './public/robots.txt',
+    ]).pipe(gulp.dest(config.build.output));
 });
 

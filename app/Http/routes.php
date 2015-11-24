@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $path = env('debug', false) ? './public/index.html' : './dist/index.html';
+
+    return File::get(\App::basePath() . $path);
 });
