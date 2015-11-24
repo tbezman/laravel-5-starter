@@ -1,0 +1,195 @@
+@mixin transition($el, $time, $type) {
+  -webkit-transition: $el $time $type;
+  -moz-transition: $el $time $type;
+  -ms-transition: $el $time $type;
+  -o-transition: $el $time $type;
+  transition: $el $time $type;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow:inset $left $top $blur $color;
+		-moz-box-shadow:inset $left $top $blur $color;
+		box-shadow:inset $left $top $blur $color;
+	} @else {
+		-webkit-box-shadow: $left $top $blur $color;
+		-moz-box-shadow: $left $top $blur $color;
+		box-shadow: $left $top $blur $color;
+	}
+}
+
+@mixin border-radius($radius-top: $defaultradius, $radius-right: null, $radius-bottom: null, $radius-left: null) {
+	-moz-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+	-webkit-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+	-ms-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+	-o-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+	-khtml-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+	border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+}
+
+@mixin user-select($property: none) {
+	-webkit-touch-callout: $property;
+	-webkit-user-select: $property;
+	-khtml-user-select: $property;
+	-moz-user-select: $property;
+	-ms-user-select: $property;
+	user-select: $property;	
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); 
+}
+
+@mixin gradient($direction, $from-color, $to-color) {
+	
+	@if $direction == 'left' {
+		background-color: mix($from-color, $to-color); /* Fallback */
+		background-image: -webkit-gradient(linear, left top, right top, from($from-color), to($to-color));
+		background-image: -webkit-linear-gradient(left, $from-color, $to-color);
+		background-image: -moz-linear-gradient(left, $from-color, $to-color);
+		background:       -ms-linear-gradient(left, $from-color, $to-color);
+		background-image: -o-linear-gradient(left, $from-color, $to-color);
+		background: linear-gradient(to right, $from-color, $to-color);
+		-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$from-color}', endColorStr='#{$to-color}',GradientType=1);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$from-color}', endColorStr='#{$to-color}',GradientType=1 );
+		
+	} @else {
+		background-color: mix($from-color, $to-color); /* Fallback */
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from-color), to($to-color));
+		background-image: -webkit-linear-gradient(top, $from-color, $to-color); 
+		background-image:    -moz-linear-gradient(top, $from-color, $to-color);
+		background-image:     -ms-linear-gradient(top, $from-color, $to-color);
+		background-image:      -o-linear-gradient(top, $from-color, $to-color);
+		-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$from-color}', endColorStr='#{$to-color}',GradientType=0);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$from-color}', endColorStr='#{$to-color}',GradientType=0 );
+	}
+}
+
+@mixin box-sizing($box) {
+	-webkit-box-sizing: $box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: $box;    /* Firefox, other Gecko */
+	box-sizing: $box;         /* Opera/IE 8+ */	
+}
+
+@mixin appearance($value) {
+	-webkit-appearance: $value;
+	-moz-appearance:    $value;
+	appearance:         $value;
+	outline: none;
+	border: none;
+}
+
+@mixin rotate($value) {
+	-ms-transform: rotate(#{$value}deg); /* IE 9 */
+-webkit-transform: rotate(#{$value}deg); /* Chrome, Safari, Opera */
+transform: rotate(#{$value}deg);
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content; 
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	} 
+}
+
+@mixin animation($name, $time, $duration, $direction) {
+	-webkit-animation: $name $time $duration $direction; /* Safari 4+ */
+	-moz-animation:    $name $time $duration $direction; /* Fx 5+ */
+	-o-animation:      $name $time $duration $direction; /* Opera 12+ */
+	animation:         $name $time $duration $direction; /* IE 10+, Fx 29+ */
+}
+
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+// scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+} 
+// translate
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+	moz-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+	transform-origin: $origin;
+}
+
+@mixin flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@function px-em($px, $px-context: 16) {
+	// Make sure it's a number
+	@if(round($px)) {
+		@return #{$px / $px-context}em;
+}
+}
+
+$bp: (
+	phone-s: 430,
+	phone: 480,
+	tablet-s: 600,
+	tablet-m: 720,
+	tablet: 760,
+	tablet-l: 840,
+	desk: 900,
+	desk-l: 1000,
+	full: 1180
+);
+
+@mixin bp($queries, $type: only screen) {
+	$query-count: length($queries);
+	$media-statement: "#{$type} and";
+	@for $i from 1 through $query-count {
+		$query: nth($queries, $i);
+		$value: '';
+		$key: '';
+		@if length($query) == 1 or nth($query, 2) == up {
+			$key: min-width;
+			$value: if(map-has-key($bp, nth($query, 1)), px-em(map-get($bp, nth($query, 1))), px-em(nth($query, 1)));
+		} @else {
+			@if nth($query, 2) == down {
+				$key: max-width;
+				$value: if(map-has-key($bp, nth($query, 1)), px-em(map-get($bp, nth($query, 1)) - 1), px-em(nth($query, 1) - 1));
+			} @else {
+				$key: nth($query, 1);
+				$value: nth($query, 2);
+			}
+		}
+		$media-statement: if($i == 1, "#{$media-statement} (#{$key}: #{$value})", "#{$media-statement}, (#{$key}: #{$value})");
+	}
+	@media #{$media-statement} {
+		@content;
+	}
+}
+
+
+

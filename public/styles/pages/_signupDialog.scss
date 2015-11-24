@@ -1,0 +1,20 @@
+.md-dialog-container--signupDialog {
+  border-radius: 5px !important;
+  background-color: $background-color !important;
+  border: 1px solid $gray;
+  max-height: initial !important;
+
+  .conflicts {
+    margin: 20px;
+
+    .conflict {
+      color: red;
+    }
+  }
+}
+
+div[vc-recaptcha]  {
+  margin: 0 auto;
+  width: 304px;
+  margin-bottom: 10px;
+}

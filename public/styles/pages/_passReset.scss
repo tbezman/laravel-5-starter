@@ -1,0 +1,27 @@
+.passResetView {
+    
+    
+    label, input {
+        display: block;
+    }
+    
+    label {
+        margin: 20px 0 5px 0;
+    }
+    
+    input {
+        width: 35%;
+        padding: 10px;
+    }
+    
+    
+    .button {
+        margin-top: 20px;
+    }
+    
+    div[vc-recaptcha] {
+        margin: 20px 0 0 0;
+    }
+    
+    
+}

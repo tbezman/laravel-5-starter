@@ -1,0 +1,143 @@
+.profileView {
+	margin-top: 60px;
+	font-size: 0;
+
+	/******************************************************/
+	/* Columns & Structure
+	/******************************************************/
+
+	.left, .right {
+		display: inline-block;
+		vertical-align: top;
+		font-size: 0;
+	}
+
+	.left {
+		width: calc(25% - 20px);
+		margin-right: 20px;
+
+	}
+
+	.right {
+		width: 75%;
+		border: 3px dashed $gray;
+		padding: 300px 0;
+		
+		h4 {font-size: 42px; color: $gray;}
+	}
+	
+	h4 {
+		display: block;
+		font-size: 14px;
+		text-align: center;
+		padding: 10px 0;
+	}
+	
+	/******************************************************/
+	/* Profile Sections
+	/******************************************************/
+	
+	.profile-basic, .badge-showcase {
+		//background-color: $xdgray;
+		border: 1px solid $gray;
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	/******************************************************/
+	/* Profile, DevBits and Links
+	/******************************************************/
+
+	.profile-basic {
+		width: 100%;
+		font-size: 14px;
+		text-align: center;
+		padding: 20px 0;
+
+		h2 {
+			text-align: center;
+		}
+		
+		span.user-title {
+			font-size: 12px;
+			color: $lgray;
+		}
+		
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 20px 0;
+		}
+
+		.profile-image {
+			width: 60%;
+			height: auto;
+		}
+	}
+
+	
+	.rank-showcase {
+		.rankView {
+			width: 12%;
+			height: auto;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 5px;
+			font-size: 0;
+		}
+
+		[rank] { 
+			display: inline;
+
+			.rank--active {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		span { vertical-align: middle; font-size: 18px; }
+	}
+	
+	.badge-showcase {
+		width: 100%;
+		font-size: 0;
+		margin-top: 20px;
+		padding: 0 10px;
+		
+		img {
+			width: calc(25% - 20px);
+			margin: 10px;
+		}
+	}
+	
+	
+	
+	
+	
+	.profile-actions {
+		width: 100%;
+		padding: 0 20px;
+		display: flex;
+		justify-content: space-between;
+		margin-top: 15px;
+		
+		span {
+			width: auto;
+			padding: 10px 20px;
+		}
+		span:nth-child(1) {
+			background: color($yellow, dark);
+		}
+		span:nth-child(2) {
+			background: color($blue, dark);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+}

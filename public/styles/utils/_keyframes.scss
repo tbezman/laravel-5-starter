@@ -1,0 +1,21 @@
+@include keyframes(herocode-1) {
+	from { left: 0; }
+	to { left: -$herocode1-width; }
+}
+
+@include keyframes(herocode-2) {
+	from { right: 0; }
+	to { right: -$herocode2-width; }
+}
+
+@include keyframes(herocode-1-pulse) {
+	0% { opacity: 0.1; }
+	50% { opacity: 1; }
+	100% { opacity: 0.1; }
+}
+
+@include keyframes(herocode-2-pulse) {
+	0% { opacity: 1; }
+	50% { opacity: 0.1; }
+	100% { opacity: 1; }
+}

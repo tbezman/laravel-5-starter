@@ -1,0 +1,97 @@
+.contactView {
+  @extend %clear;
+  margin-bottom: 60px;
+
+  .left, .right {
+    height: auto;
+    margin-top: 60px;
+  }
+
+  .left { width: calc(40% - 70px); float: left; }
+  .right { width: calc(60% - 70px); float: right; }
+
+  p {
+    font-size: 13px;
+    padding: 0 0 10px 20px;
+  }
+
+  h4 {
+    padding: 0 0 10px 20px;
+  }
+
+
+  form {
+    display: block;
+    padding-left: 20px;
+
+    label {
+      display: block;
+      margin: 20px 0 5px 0;
+      text-transform: uppercase;
+      color: $lgray;
+
+      &:after {
+        content: "*";
+        color: $accent-color;
+        padding-left: 5px;
+      }
+    }
+
+    input, select, textarea {
+      width: 100%;
+      display: block;
+      padding: 7px 10px;
+      background: $dgray;
+      border: 1px solid $gray;
+
+      &:focus {
+        border-color: $accent-color;
+      }
+    }
+
+    textarea {
+      min-height: 200px;
+      resize: vertical;
+    }
+
+    option {
+      background: $dgray;
+    }
+
+    button {
+      font-size: 20px;
+      display: inline-block;
+      margin-top: 50px;
+      margin-left: 50%;
+      transform: translate(-50%);
+    }
+
+  }
+}
+
+.contactView__links {
+  list-style-type: none;
+  padding: 20px;
+  li {
+    padding-bottom: 12px;
+  }
+  i {
+    margin-left: -13px;
+    padding-right: 10px;
+    width: 50px;
+    text-align: center;
+  }
+}
+
+$social-names: facebook, twitter, gplus, reddit, twitch;
+$social-colors: $facebook-color, $twitter-color, $gplus-color, $reddit-color, $twitch-color;
+@each $current-color in $social-colors {
+  $i: index($social-colors, $current-color);
+  .contactView__links li:nth-child(#{$i}):hover a {
+    color: nth($social-colors, $i);
+  }
+
+  .red {
+    color: red !important;
+  }
+}

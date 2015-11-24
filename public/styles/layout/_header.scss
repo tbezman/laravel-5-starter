@@ -1,0 +1,353 @@
+header {
+  position: relative;
+	background-color: $foreground-color;
+
+	&.header--desktop { display: block; }
+	&.header--mobile { display: none; }
+	
+	.fa-caret-down { font-size: 12px; padding-left: 5px; }
+  .notification-banner {
+    height: 40px;
+    // background-color: $purple-color;
+    background-image: url('/assets/img/slack-bg.jpg');
+    color: $font-color;
+    font-size: 20px;
+    position: relative;
+    //border-bottom: 5px solid darken($purple-color, 20%);
+      
+      .inner {
+          text-align: center;
+      }
+      
+      img, span {
+          vertical-align: middle;
+      }
+      img {
+          height: 25px;
+          display: inline-block;
+          margin-right: 10px;
+      }
+      
+    span {
+        display: inline-block;
+        line-height: 40px;
+        font-weight: 200;
+        
+        span {
+            font-size: 2.0rem;
+            padding: 0 5px;
+        }
+        
+        a {
+            color: #EAA822;
+            font-weight: bold;
+            &:hover {
+                color: $accent-color;
+            }
+        }
+    }
+    .notification-close {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        line-height: 40px;
+        cursor: pointer;
+        &:hover {
+            color: $accent-color;
+        }
+    }
+   }
+  .info-username {
+    width: auto;
+    height: 30px;
+    padding: 0 15px;
+    line-height: 30px;
+    font-size: 14px;
+    vertical-align: middle;
+    color: white;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    &:hover {
+      background: #e91e63;
+    }
+  }
+  .info-username__list {
+    display: none;
+    position: absolute;
+    background: #252525;
+    list-style:none;
+    text-align: left;
+    min-width: 150px;
+    top:0;
+    right: 0;
+    margin:0;
+    padding: 0;
+    z-index: 1000;
+    border-top: 1px solid black;
+    top: 30px;
+	  font-size: 14px;
+
+    li {
+      padding: 2px 10px;
+      display: block;
+      &:hover { background: #e91e63;}
+      i {
+        width: 20px;
+      }
+    }
+
+    .profile-link {
+      padding: 0;
+
+      a {
+        padding: 2px 10px;
+        display: block;
+      }
+    }
+  }
+
+  .active {
+    display: block;
+  }
+
+  .pink {
+    background-color: #e91e63;
+  }
+
+  .left-bar,
+  .right-bar {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 50%;
+  }
+
+  .left-bar {
+    left: 0;
+    background-color: $main-color;
+  }
+
+  .right-bar {
+    right: 0;
+    background-color: $accent-color;
+  }
+
+  nav {
+	  @include flex;
+	  justify-content: space-between;
+    width: $inner-width;
+    height: 60px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 0;
+
+    .nav-item {
+      width: 10%;
+      position: relative;
+      display: inline-block;
+      color: $font-color;
+      vertical-align: top;
+      line-height: 60px;
+      transition: color 0.5s ease;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:after {
+        content: "";
+        width: 100%;
+        height: 0px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include transition(all, 0.3s, ease);
+      }
+
+		&:nth-child(n+1):nth-child(-n+3):hover, &.active:nth-child(n+1):nth-child(-n+3){
+        span {
+          color: $main-color;
+        }
+        &:after {
+          height: 8px;
+          background-color: $main-color;
+        }
+      }
+
+		&:nth-child(n+5):hover, &.active:nth-child(n+5) {
+        span {
+          color: $accent-color;
+        }
+        &:after {
+          height: 8px;
+          background-color: $accent-color;
+        }
+      }
+		
+	
+    } // .nav-item
+	  
+	  
+  } // nav
+
+
+  .logo {
+    @include transition(background-color, 200ms, ease);
+    border: 5px solid $foreground-color;
+
+    &:hover {
+      background-color: $gray;
+    }
+  }
+
+  .logo-title {
+    display: none;
+  }
+
+  .info-bar {
+    width: 100%;
+    height: auto;
+    background-color: $dgray;
+    font-size: 0;
+
+    .left-info,
+    .right-info {
+      width: 50%;
+      display: inline-block;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+
+    .left-info {
+      text-align: left;
+        font-size: 0;
+        
+        span, .button {
+            vertical-align: middle;
+        }
+        
+        span { font-size: 12px; }
+        .button {
+            &:last-of-type {
+                margin-right: 10px;
+            }
+            
+            &.modDoc {
+                background-color: transparent;
+                &:hover {
+                    background-color: $accent-color;
+                }
+            }
+        }
+    }
+
+    .right-info {
+      text-align: right;
+      font-size: 0;
+    }
+
+    .button {
+      width: auto;
+      height: 30px;
+      padding: 0 15px;
+      line-height: 30px;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+  } // .info-bar
+	
+	
+	.totalDevbits {
+		display: inline-block;
+		height: 100%;
+		text-align: center;
+		vertical-align: middle;
+		color: $white;
+		cursor: pointer;
+		font-size: 0;
+
+		img, p {
+			vertical-align: middle;
+			display: inline-block;
+		}
+
+		img {
+			height: 27%;
+			width: 27%;
+			margin: 0;
+		}
+		p {
+			font-size: 14px;
+			padding-left: 5px;
+		}
+		&:hover {
+			color: color($orange);
+		}
+	}
+	
+	
+	
+	&.header--mobile {
+		
+		.hamMenu { 
+			cursor: pointer;
+			&:hover {
+				color: $accent-color;
+			}
+		}
+		
+		.inner {
+			height: $header-mobile-height;
+			line-height: $header-mobile-height;
+			position: relative;
+		}
+		
+		.header__left, .header__right {
+			position: absolute;
+			top: 0;
+		}
+		
+		.header__left {
+			left: 0;
+			font-size: 2rem;
+		}
+		
+		.logo {
+			display: block;
+			margin: 0 auto;
+		}
+		
+		.header__right {
+			right: 0;
+			font-size: 0;
+
+			.button {
+				font-size: 1rem;
+				padding: 0 10px;
+			}
+		}
+	}
+	
+} // header
+
+
+
+
+nav.mobileNav {
+	width: 100%;
+	text-align: center;
+	padding-top: 40px;
+	display: none;
+	border-bottom: 1px solid $dgray;
+	a.mobileNav__item {
+		display: block;
+		padding: 20px 0;
+		&:hover {
+			background-color: $gray;
+		}
+	}
+}
+
+header.header--desktop .logo { cursor: pointer; }
+header.header--mobile .logo { cursor: pointer; }

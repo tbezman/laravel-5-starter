@@ -1,0 +1,175 @@
+blog {
+  position: relative;
+  margin: 0 0 60px;
+  width: 670px;
+  color: #fff;
+
+  h1 {
+    padding: 0 30px 5px 0;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h3 {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .post-info {
+    padding: 0 0 15px;
+
+    > span {
+      font-size: 15px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .divider {
+      color: #8A8A8A;
+    }
+  }
+
+  .post-tags {
+    padding: 15px 0 0;
+    list-style-type: none;
+    color: #636363;
+
+    li {
+      display: inline-block;
+      margin: 0 3px;
+      font-size: 13px;
+
+      &:first-child {
+        margin: 0 5px 0 0;
+      }
+    }
+
+    a {
+      color: #636363;
+      text-decoration: none;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+
+      &:hover {
+        color: lighten(#636363, 15%);
+      }
+    }
+  }
+
+  hr {
+    margin: 0 0 20px;
+    height: 2px;
+    color: #e91e63;
+    background-color: #e91e63;
+    border: none;
+  }
+
+  .featured-image {
+    width: 100%;
+  }
+
+  .sub-heading {
+    margin: 25px 50px 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .post-sharebox {
+    margin: 40px 0 0;
+
+    h2 {
+      margin: 0;
+      font-weight: bold;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 5px 0;
+
+      li {
+        display: inline-block;
+        text-align: center;
+      }
+
+      a {
+        display: block;
+        padding: 9px 0;
+        width: 40px;
+        color: #fff;
+      }
+
+      .facebook {background: $facebook-color;
+        &:hover {background: darken($facebook-color, 10%);}
+      }
+      .twitter {background: $twitter-color;
+        &:hover {background: darken($twitter-color, 10%);}
+      }
+      .gplus {background: $gplus-color;
+        &:hover {background: darken($gplus-color, 10%);}
+      }
+      .reddit {background: $reddit-color;
+        &:hover {background: darken($reddit-color, 10%);}
+      }
+    }
+  }
+
+  .read-more {
+    display: none;
+  }
+}
+
+
+
+.blog-post__content {
+  margin: 0 30px 0 0;
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+
+.blog-post--preview {
+  border: 1px solid $dgray;
+
+  h1 {
+    padding: 20px 20px 0;
+    font-size: 22px;
+    background: $dgray;
+  }
+
+  .post-info {
+    padding: 0 20px 20px;
+    background: $dgray;
+  }
+
+  .featured-image {
+    padding: 20px;
+  }
+
+  hr,
+  .blog-post__content,
+  .post-sharebox {
+    display: none;
+  }
+
+  .sub-heading {
+    display: block;
+    margin: 0;
+    padding: 0 20px 50px;
+  }
+
+  .read-more {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: $main-color;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}

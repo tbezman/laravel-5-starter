@@ -1,0 +1,64 @@
+.button {
+  width: auto;
+  height: auto;
+	padding: 7px 14px;
+  border: 0;
+  background-color: darken($main-color, 5%);
+    border-bottom: 5px solid darken($main-color, 25%);
+  transition: all 0.2s ease-out;
+  color: white;
+	cursor: pointer;
+	display: inline-block;
+
+  &:hover {
+    background-color: $accent-color;
+      border-color: darken($accent-color, 25%);
+  }
+
+  .fa {
+    padding-right: 7px;
+  }
+}
+
+.button--flat {
+    border-bottom: 0 !important;
+    transform: translateY(0) !important;
+}
+
+.button.button--warn {
+  background-color: color($red, dark);
+    border-color: darken((color($red, dark)), 25%);
+
+  &:hover {
+      background-color: darken((color($red, dark)), 10%);
+      border-color: darken((color($red, dark)), 30%);
+  }
+}
+
+.button.button--clear {
+  background-color: transparent;
+    border-bottom: 0;
+
+  &:hover {
+    background-color: $accent-color;
+    color: white;
+  }
+}
+
+.button.button--disabled {
+  background-color: grey;
+border-bottom: 0;
+    transform: translateY(5px);
+
+  &:hover {
+    background-color: grey;
+  }
+}
+
+a.button {
+  display: inline-block;
+}
+
+.button-primary {
+  background-color: color($blue, light);
+}

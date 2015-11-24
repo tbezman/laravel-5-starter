@@ -1,0 +1,83 @@
+.form__overlay {
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.form__group {
+  padding: 20px 0 0 0;
+}
+
+.form__group--border {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #fff;
+}
+
+.form--blue,
+.form--red {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  padding: 50px;
+}
+
+.form--blue {
+  background-color: $main-color;
+}
+
+.form--red {
+  background-color: $accent-color;
+}
+
+.form__input {
+  margin: 15px 0;
+}
+
+.form__input--inline {
+  overflow: hidden;
+}
+
+.form__input--text {
+  border: none;
+  padding: 15px;
+  color: $accent-color;
+  width: 100%;
+}
+
+.form__input--radio {
+}
+
+.form__label--text {
+  display: block;
+  padding-bottom: 5px;
+}
+
+.form__label--radio {
+  display: inline-block;
+  min-width: 50px;
+}
+
+.form__submit {
+  padding: 25px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.form__submit-button,
+.form__submit-button--inline {
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  padding: 15px 30px;
+  background: $main-color;
+  transition: background-color .2s ease-out;
+  &:hover {
+    background-color: $accent-color;
+  }
+}
+
+.form__submit-button--inline {
+  float: right;
+  clear: both;
+}
+

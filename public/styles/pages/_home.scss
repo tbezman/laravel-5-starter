@@ -1,0 +1,287 @@
+.homeView {
+	
+	.col-2 .left {
+		margin-top: 20px;
+	}
+	
+	.featured {
+		min-height: 400px;
+		position: relative;
+		overflow: hidden;
+		background-color: #0A0A0A;
+
+		.inner { 
+		  position: relative;
+		  height: auto;
+		  z-index: 2;
+		}
+
+		.scanlines {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			background: url("../../../assets/img/overlay.png") rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	.herocode1-container {
+		@include animation(herocode-1-pulse, 10s, linear, infinite);
+	}
+	
+	.herocode2-container {
+		@include animation(herocode-2-pulse, 10s, linear, infinite);
+	}
+	
+	.herocode {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		
+		&.herocode--1 {
+			width: $herocode1-width * 2;
+			height: $herocode1-height + ($herocode-space * $herocode-dec);
+			background: url("../../../assets/img/herocode-1.png") repeat;
+			background-size: $herocode-bgsize;
+			position: absolute;
+			@include animation(herocode-1, 120s, linear, infinite);
+		}
+		
+		&.herocode--2 { 
+			width: $herocode2-width * 2;
+			height: $herocode2-height + ($herocode-space * $herocode-dec);
+			background: url("../../../assets/img/herocode-2.png") repeat;
+			top: $herocode-space * ($herocode-dec * 2); 
+			background-size: $herocode-bgsize;
+			position: absolute;
+			@include animation(herocode-2, 240s, linear, infinite);
+		}
+	}
+	
+	.logo--tournament {
+		width: 70%;
+		height: auto;
+		margin: 0 auto;
+		display: block;
+	}
+	
+	.surfacepro {
+		width: 55%;
+		height: auto;
+		position: absolute;
+		left: 0;
+		margin-top: 40px;
+	}
+	
+	.featuredText {
+		position: absolute;
+		width: 50%;
+		padding: 25px 0 0 40px;
+		height: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		font-size: 50px;
+		text-align: center;
+		h1 { 
+			font-weight: 200;
+			font-size: 41px;
+			display: inline-block;
+			
+			span {
+				color: $accent-color;
+				font-size: inherit;
+			}
+		}
+
+		span {
+			font-size: 16px;
+			display: block;
+			letter-spacing: 1px;
+		}
+		
+		.signup {
+			width: 50%;
+			margin: 0 auto;
+			font-size: 16px;
+			text-align: center;
+			padding: 15px 0;
+			display: block;
+			font-weight: bold;
+			margin-top: 20px;
+		}
+	}
+	
+	
+	.sponsor {
+		width: 65%;
+	}
+
+	.featured__stats {
+	  width: 100%;
+	  height: 85px;
+	  position: absolute;
+	  background-color: rgba(0, 0, 0, 0.9);
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  text-align: center;
+	  color: white;
+	  padding: 20px 0;
+		z-index: 2;
+		
+		.inner { 
+			@include flex;
+			justify-content: space-around;
+		}
+	}
+
+	.or-seperator {
+		color: $lgray;
+		display: block;
+		text-align: center;
+		font-size: 24px;
+		position: relative;
+		padding: 10px 0;
+		
+		i { padding-right: 10px; }
+		&:before, &:after {
+			content: "";
+			border-top: 1px solid $lgray;
+			position: absolute;
+			top: 50%;
+			width: 20%;
+		}
+		&:before { left: 0; }
+		&:after { right: 0; }
+
+	}
+
+	.featured-links__social {
+		text-align: center;
+		font-size: 0;
+		i {
+			display: inline-block;
+			font-size: 20px;
+			width: calc(20% - 8px);
+			margin: 0 4px;
+			border: 1px solid white;
+			padding: 10px 0;
+			cursor: pointer;
+			&.fa-facebook { margin-left: 0; }
+			&.fa-github-alt { margin-right: 0; }
+		}
+	}
+
+	$social-names: facebook, twitter, gplus, twitch, github;
+	$social-colors: $facebook-color, $twitter-color, $gplus-color, $twitch-color, $github-color;
+	@each $current-color in $social-colors {
+		$i: index($social-colors, $current-color);
+		.featured-links__social i:nth-child(#{$i}):hover {
+			background: nth($social-colors, $i);
+			border-color: white;
+		}
+	}
+
+	.stats__stat {
+	  display: inline-block;
+	  margin: 0 4%;
+	}
+
+	.stats__stat h3 {
+	  display: block;
+	  font-weight: 200;
+	  font-size: 0.9em;
+	}
+
+	.stats__stat span {
+	  display: block;
+	  font-size: 1.4em;
+	  font-weight: 400;
+	}
+
+	.main-content {
+	  width: 50%;
+	  margin: 0 auto;
+	}
+
+	.main-content__play {
+	  width: 100%;
+	  border: 1px solid $gray;
+	  margin-top: 20px;
+	  padding: 20px 40px;
+	  font-size: 0;
+	}
+
+	.play__text, .play__button {
+	  display: inline-block;
+	  vertical-align: middle;
+		padding: 10px 0;
+	}
+
+	.play__text {
+	  font-size: 26px;
+	  width: 80%;
+	  letter-spacing: 1px;
+	  text-transform: uppercase;
+	}
+
+	.play__button {
+	  text-align: center;
+	  font-size: 14px;
+	  width: 20%;
+	}
+
+
+	/* Blog Element Styling */
+
+	.blogpost__preview {
+	  padding-bottom: 20px;
+	  h6 {
+		margin: 0;
+		padding: 2px;
+		font-weight: 200;
+	  }
+	}
+	
+	.blogpost__header {
+		cursor: pointer;
+		color: $main-color;
+        
+        h3 {
+            font-size: 18px;
+            font-weight: 400; 
+        }
+		
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.blogpost__image {
+	  width: 100%;
+	  margin: 5px;
+		max-height:80px;
+	  margin-right: 20px;
+	  background-size: contain;
+	  background-repeat: no-repeat !important;
+		background-position: center;
+	  padding: 30px 0 30px 0;
+	}
+
+	.readMoreLink {
+	  color: $main-color;
+	  cursor: pointer;
+	}
+
+	.blogpost__content {
+	  display: inline;
+	  line-height: 24px;
+	  word-break: break-word;
+	  font-size: 14px;
+        font-weight: 400;
+	}
+}

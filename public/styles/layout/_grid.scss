@@ -1,0 +1,46 @@
+.container {
+	margin: 0 auto;
+	width: 1170px;
+}
+
+@media screen and (max-width: 840px) {
+	
+	.container {
+		width: auto;
+	}
+}
+
+.col-2 {
+	@extend %clear;
+	width: 100%;
+	
+	.left, .right {
+		display: inline-block;
+	}
+	.left {
+		width: calc(70% - 40px);
+		float: left;
+	}
+	.right { 
+		width: calc(30% - 40px);
+		float: right;
+	}
+}
+
+
+.col-2--dashboard {
+	@extend %clear;
+	width: 100%;
+
+	.left, .right {
+		display: inline-block;
+	}
+	.left {
+		width: calc(10% - 20px);
+		float: left;
+	}
+	.right { 
+		width: calc(90% - 20px);
+		float: right;
+	}
+}

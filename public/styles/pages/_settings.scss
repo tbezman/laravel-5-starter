@@ -1,0 +1,312 @@
+.settingsView {
+  margin-top: 60px;
+
+  .button {
+    margin: 0 auto;
+  }
+
+  .c9-register {
+    width: 90%;
+    border: 1px solid $c9-color;
+    text-align: center;
+    margin: 0 auto;
+
+    img { height: 30px; display: block; margin: 20px auto; }
+    span { font-size: 14px; padding: 6px 0 10px 0; display: block; }
+    input { width: 60%; margin: 5px 0 30px;}
+  }
+
+  .split-inputs {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+
+  .dateofbirth {
+
+    span { 
+      width: calc(20% - 10px); 
+      align-self: center;
+    }
+
+    label {     
+      line-height: 39px;
+      margin: 10px 0;
+      text-align: center;
+    }
+    
+    input:nth-child(2) { width: calc(20% - 10px); }
+    input:nth-child(3) { width: calc(40% - 10px); }
+    input:nth-child(4) { width: calc(40% - 10px); }
+  }
+
+  ul.settings-nav {
+    list-style: none;
+    border-bottom: 3px solid $accent-color;
+
+    li {
+      display: inline-block;
+      text-align: center;
+      width: 20%;
+      line-height: 40px;
+      background: $dgray;
+
+      &:hover {
+        background: $accent-color;
+        color: white;
+        cursor: pointer;
+      }
+    }
+
+    .selected {
+      background: $accent-color;
+      color: white;
+    }
+  }
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    height: 100px;
+  }
+
+  label {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+
+    span, input {
+      text-align: left;
+      display: inline-block;
+    }
+
+    span {
+      width: 100%;
+      padding: 7px 0;
+
+      &.required-field:after {
+        content: "*";
+        color: color($red, dark);
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .avatar-upload {
+    width: 70%;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+
+    .button {
+      width: 50%;
+      background: $dgray;
+      display: inline-block;
+      text-align: center;
+      &:hover { background: $accent-color; }
+    }
+
+  }
+
+  .settings-content {
+    width: 60%;
+    margin: 0 0 0 50px;
+
+    .tooltip {
+      position: relative;
+      display: inline-block;;
+      height: 40px;
+      background-color: #363636;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      vertical-align: top;
+      margin-left: 35px;
+      :before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20px 20px 20px 0;
+        border-color: transparent #363636 transparent transparent;
+        left: -20px;
+      }
+      span {
+        display: inline-block;
+        line-height: 40px;
+        vertical-align: top;
+        color: #FFFFFF;
+        margin-left: 8px;
+        font-size: 16px;
+        vertical-align: middle;
+      }
+      img {
+        width: 30px;
+        height: auto;
+        vertical-align: middle;
+        padding: 7px 7px 7px 3px;
+        margin-right: 10px;
+      }
+    }
+
+    .connect-social-button:hover + .tooltip {
+      background-color: color($orange);
+      span:before {
+        border-color: rgba(0, 0, 0, 0) color($orange) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+      }
+    }
+
+    ul.connect-social {
+      @include user-select(none);
+      display: inline-block;
+      list-style-type: none;
+      li {
+        margin: 30px;
+      }
+      i {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #FFFFFF;
+      }
+      .connect-social-button {
+        display: inline-block;
+        width: 252px;
+        cursor: pointer;
+        span {
+          color: #FFFFFF;
+          display: inline-block;
+          width: 210px;
+          text-align: center;
+        }
+
+        &.connect-social-button--disconnect {
+          border: 1px solid color($red, light);
+          background-color: transparent;
+          i, span { color: color($red, light); }
+
+          &:hover {
+            background-color: color($red, light);
+            i, span { color: $white; }
+          }
+        }
+      }
+    }
+  } /* settings-content */
+
+  $social-names: twitter, facebook, gplus, twitch, github;
+  $social-colors: $twitter-color, $facebook-color, $gplus-color, $twitch-color, $github-color;
+  @each $current-color in $social-colors {
+    $i: index($social-colors, $current-color);
+    .connect-social li:nth-child(#{$i}) .connect-social-button {
+      background-color: nth($social-colors, $i);
+    }
+  }
+
+  $social-names: twitter, facebook, gplus, twitch, github;
+  $social-active: $twitter-active, $facebook-active, $gplus-active, $twitch-active, $github-active;
+  @each $current-color in $social-active {
+    $i: index($social-active, $current-color);
+    .connect-social li:nth-child(#{$i}) .connect-social-button:active {
+      background-color: nth($social-active, $i);
+    }
+  }
+
+  .positionMain {
+
+    &.positionMain--html {
+      h6 { margin-top: 0; }
+      h6.skillName { color: $html-color; }
+      .html-hover {
+        background-color: $html-color;
+      }
+      span:not(.selected):hover {
+        background: $html-color;
+        & ~ span { background: $html-color; }
+      }
+    }
+
+    &.positionMain--css {
+      h6.skillName { color: $css-color; }
+      .css-hover {
+        background-color: $css-color;
+      }
+      span:not(.selected):hover {
+        background: $css-color;
+        & ~ span { background: $css-color; }
+      }
+    }
+
+    &.positionMain--js {
+      h6.skillName { color: $js-color; }
+      .js-hover {
+        background-color: $js-color;
+      }
+      span:not(.selected):hover {
+        background: $js-color;
+        & ~ span { background: $js-color; }
+      }
+    }
+
+
+    & > p {
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.3;
+      color: $lgray;
+      padding: 10px 0 40px 0;
+      display: block;
+    }
+
+    p.no-margin-bottom {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .positionInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    h6 {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+  }
+
+  .skillMeter {
+    width: 100%;
+    height: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+
+    span {
+      width: calc(20% - 5px);
+      height: 100%;
+      background: $gray;
+      cursor: pointer;
+    }
+  }
+
+} /* .settingsView */

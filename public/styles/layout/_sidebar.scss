@@ -1,0 +1,130 @@
+.sidebarView {
+	background: $foreground-color;
+	padding: 20px;
+	
+    .sidebar-box {
+		text-align: center;
+		display: block;
+		padding: 10px 10px;
+		height: auto;
+        margin-bottom: 20px;
+		position: relative;
+		h3 { font-size: 2rem; font-weight: 200; }
+		span { display: block; font-size: 14px; }
+		
+		&.merch {
+			background: url('/assets/img/dw-tshirt.jpg');
+			background-position: center;
+			background-size: 100%;
+			transition: all 300ms ease;
+			height: 118px;
+			padding: 0;
+			font-size: 24px;
+			
+			h3 { 
+				width: 100%;
+				position: absolute; 
+				z-index: 2;
+				top: 50%;
+				transform: translateY(-50%);
+
+			}
+			
+			&:hover {
+				background-size: 110%;
+			}
+		}
+		
+		&.explain {
+            background: $main-color;
+            &:hover {
+                background: lighten($main-color, 5%);
+            }
+        }
+
+	    &.donate {
+		    background: #0E9841;
+		    &:hover {
+			    background: lighten(#0E9841, 5%);
+		    }
+	    }
+
+        &.extension {
+            background: $accent-color;
+            h3 { font-size: 1.6rem; }
+            &:hover {
+                background: lighten($accent-color, 5%);
+            }
+        }
+
+        &.advertise {
+        	padding: 20px 0;
+        	border: 1px solid $gray;
+        	background: $dgray;
+
+        	span {
+        		padding: 10px 0;
+        	}
+
+        	&:hover {
+        		background: $gray;
+        	}
+        }
+		&:last-child {
+			margin-bottom: 0;
+		}
+    }
+
+	.leaderboard {
+		width: 100%;
+
+		&:first-child {
+			margin-bottom: 20px;
+		}
+		
+		.title {
+			margin-bottom: 0;
+			border-bottom: none;
+			.fa { padding-right: 10px; }
+			&:before { display: none; }
+		}
+	}
+
+	.leaderboard__lb-row {
+		width: 100%;
+		font-size: 0;
+	}
+
+	a:nth-child(odd) .leaderboard__lb-row {
+		background-color: $dgray;
+		&:hover {
+			background-color: $lgray;
+			color: $background-color;
+		}
+	}
+
+	.leaderboard__lb-row {
+		width: 100%;
+		padding: 10px 0;
+		font-size: 0;
+		text-align: center;
+		transition: all 100ms ease-out;
+		&:hover {
+			background-color: $lgray;
+			color: $background-color;
+		}
+	}
+
+
+	.lb-row__lb-col {
+		display: inline-block;
+		width: auto;
+		font-size: 12px;
+		&:nth-child(1) { width: 10%; }
+		&:nth-child(2) { width: 40%; }
+		&:nth-child(3) { width: 30%; }
+		&:nth-child(4) { width: 20%; }
+	}
+	
+	
+}

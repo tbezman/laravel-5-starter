@@ -1,0 +1,181 @@
+.gameControlPanelView {
+
+  .panelInner {
+    width: 75%;
+    margin: 0 auto;
+
+    .leftColumn {
+      & > div:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      & > div:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      .divider {
+        background-color: $main-color;
+      }
+    }
+  }
+
+  .order-input {
+    width: 15%;
+  }
+
+  .menuBar {
+    background-color: $dgray;
+
+    width: 75%;
+    min-height: 50px;
+
+    margin: 28px auto;
+
+    .button {
+      width: auto;
+      height: 40px;
+      margin: 10px;
+
+      padding: 2px;
+    }
+
+    .doneCheckbox {
+      display: inline;
+    }
+
+    & > * {
+      display: inline-block;
+    }
+  }
+
+  .team {
+    width: 50%;
+    display: inline-block;
+    font-size: 0;
+    vertical-align: top;
+
+    .winCheckbox {
+      display: inline;
+    }
+  }
+
+  .teamName {
+    font-size: 16px;
+    text-transform: capitalize;
+
+    width: 80%;
+  }
+
+  .player {
+    width: 80%;
+    background: transparent;
+    font-size: 0;
+    border: 1px solid $gray;
+    cursor: pointer;
+    margin: 10px 0;
+
+
+    .role, .player-name, .remove-player, .edit-player {
+      display: inline-block;
+      font-size: 16px;
+      overflow-x: hidden;
+      vertical-align: middle;
+    }
+
+    .role {
+      width: 17%;
+      padding: 20px 0;
+      background: black;
+      text-align: center;
+      font-size: 11px;
+    }
+
+    .player-name {
+      width: calc(66% - 15px);
+      margin-left: 15px;
+    }
+
+    .remove-player {
+      width: 17%;
+      text-align: center;
+      display: none;
+      font-size: 22px;
+      padding: 10px 0;
+      &:hover {
+        color: $accent-color;
+      }
+    }
+
+    &:hover {
+      border-color: white;
+    }
+
+    &:hover .remove-player {
+      display: inline-block;
+    }
+  }
+
+  .objectives {
+    .objective {
+      .removeObjective {
+        margin: 15px 0;
+      }
+
+      .teamCheck {
+        background-color: white;
+        color: black;
+
+        margin: 15px 0;
+      }
+      .teamCheckbox {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .appliedUserTitle {
+    padding-top: 10px;
+  }
+
+  .signedUpUsers {
+    margin-left: 20px;
+    border-left: 1px solid white;
+
+    max-height: 400px;
+
+    .logo {
+      width: 25px;
+      margin: 0;
+    }
+
+    .logo-title {
+      display: none;
+    }
+
+    .signedUpUser {
+      height: 30px;
+      padding: 10px;
+
+      transition: background-color 200ms ease;
+
+      &:hover {
+        background-color: #252525;
+      }
+    }
+  }
+
+  .teamUrlLinks {
+    margin-top: 30px;
+    font-size: 20px;
+
+    .form__label--text {
+      padding-bottom: 0;
+    }
+
+    .form__input {
+      width: 80%;
+      color: white !important;
+      font-size: 15px;
+    }
+  }
+}

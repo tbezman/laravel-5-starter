@@ -1,0 +1,137 @@
+.md-dialog-container {
+	.closeDialog {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		font-size: 2rem;
+		color: $gray;
+		cursor: pointer;
+		&:hover {
+			color: color($red, light);
+		}
+	}
+}
+
+
+
+
+.md-dialog-container--loginDialog {
+  border-radius: 5px !important;
+	background-color: $background-color !important;
+  border: 1px solid $gray;
+
+  .incorrectCredentials {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.dialog-container .dialog-container__title {
+  text-align: center;
+  color: white;
+  font-weight: 200;
+  font-size: 24px;
+
+  padding-bottom: 20px;
+}
+
+.dialog-container .form__group {
+  padding: 0;
+}
+
+.dialog-container .form__group input {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+
+.dialog-container .action-buttons {
+    @extend %clear;
+    
+  .button, span {
+    padding: 10px 25px;
+    float: right;
+  }
+  span { font-size: 14px; }
+}
+
+
+.dialog-container {
+  background-color: $background-color;
+
+  width: auto;
+  height: auto;
+
+  border-radius: 5px;
+  max-width: 500px;
+  padding: 40px;
+
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+  .title--line {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px 0;
+    span {	background: $background-color; font-size: 18px; }
+    &:before { border-color: $lgray; top: 50%; }
+  }
+
+  .socialConnect__box {
+    font-size: 0;
+  }
+
+  .socialConnect {
+    @include transition(all, 250ms, ease-out);
+    color: $white;
+    background: $dgray;
+    width: calc(20% - 20px);
+    font-size: 18px;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+
+
+  }
+
+  $social-names: facebook, twitter, gplus, twitch, github;
+  $social-colors: $facebook-color, $twitter-color, $gplus-color, $twitch-color, $github-color;
+  @each $current-color in $social-colors {
+    $i: index($social-colors, $current-color);
+    .socialConnect:nth-child(#{$i}) {
+
+      border-bottom: 5px solid nth($social-colors, $i);
+
+      &:hover {
+        background: nth($social-colors, $i);
+      }
+    }
+  }
+
+.socialConnect.fa-github-alt {
+	border-bottom-color: $white;
+
+	&:hover {
+		background: $white;
+		color: $github-color;
+	}
+}
+    
+    .account-info {
+        width: 100%;
+        border-top: 1px solid $gray;
+        text-align: center;
+        margin-top: 20px;
+        padding-top: 20px;
+        a {
+            color: $main-color;
+        }
+    }
+
+}

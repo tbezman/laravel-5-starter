@@ -1,0 +1,94 @@
+.blogView {
+	margin-top: 60px;
+
+    .blog-post {
+      display: block;
+
+      &:not(:first-child) {
+        margin-top: 75px;
+      }
+    }
+
+	.button.newPostButton {
+	  margin-top: 20px;
+	}
+
+	.blog__sidebar {
+	  display: inline-block;
+	  height: 400px;
+	  height: auto;
+	  margin-top: 60px;
+	  width: calc(30% - 40px); 
+	  float: right;
+	  h1 {
+		padding: 0 10px 10px 0;
+	  }
+	}
+
+	.blog__post {
+		width: 100%;
+	  position: relative;
+	  display: inline-block;
+	  border: 1px solid $gray;
+	  height: auto;
+	  margin-bottom: 60px;
+		line-height: 1;
+
+		p { line-height: 1.5; }
+
+	  img {
+		display: block;
+		padding: 20px;
+		width: 100%;
+		height: auto;
+	  }
+	}
+
+	.blog__post--close {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  i {
+	  padding: 10px;
+	  }
+	  .edit:hover {
+		  color: color($green, light);
+	  }
+	  .close:hover {
+		  color: color($red, light);
+	  }
+	}
+
+	.blog__post--title {
+	  font-size: 20px;
+	  padding: 15px 20px 5px 20px;
+	  background-color: $dgray;
+	}
+
+	.blog__post--poster {
+	  font-size: 12px;
+	  padding: 0 0 10px 20px;
+	  background-color: $dgray;
+	}
+
+	.blog__post--summary {
+	  display: block;
+	  padding: 0 0 20px 20px;
+	  font-weight: 600;
+	}
+
+	.blog__post--content {
+	  width: 100%;
+	  display: inline-block;
+	  padding: 0 20px 20px 20px;
+	}
+
+	.blog__share {
+	  padding: 15px;
+
+	  &> * {
+		margin: -4px 10px;
+	  }
+	}
+
+}

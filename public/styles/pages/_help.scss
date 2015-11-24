@@ -1,0 +1,108 @@
+.help {
+	font-size: 0;
+	margin-top: 60px;
+}
+
+.help__sidebar {
+	position: fixed;
+	vertical-align: top;
+	width: 180px;;
+	margin-right: 40px;
+	.help__sidebar-list {
+		font-size: 16px;
+		list-style-type: none;
+		a {
+			padding: 7px 0 7px 15px;
+			cursor: pointer;
+			display: block;
+		}
+		
+		li:nth-of-type(7) {
+			margin-top: 40px;
+		}
+		li:hover {
+			background-color: $accent-color;
+			color: $white;
+		}
+		li:last-of-type:hover {
+			background-color: transparent;
+			a { color: $accent-color; }
+		}
+	}
+}
+
+.help__answers-container {
+	display: inline-block;
+	vertical-align: top;
+	float: right;
+	width: 80%;
+	font-size: 16px;
+}
+
+.help__answers {
+	padding: 0 40px;
+	h1 {
+		padding-bottom: 20px;
+	}
+}
+
+.general__help-questions, .account__help-questions, .devbits__help-questions, .devwars__help-questions, .xp__help-questions, .twitch__help-questions {
+	margin-bottom: 40px;
+	ul {
+		list-style-type: none;
+	}
+	li {
+		display: block;
+		a {
+			color: $main-color;
+			cursor: pointer;
+			padding: 5px 0 5px 0;
+			display: inline-block;
+			&:hover {
+				color: $main-color;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.general__help-answers, .account__help-answers, .devbits__help-answers, .devwars__help-answers, .xp__help-answers, .twitch__help-answers {
+	div {
+		margin-bottom: 20px;
+		padding: 20px;
+		border: 1px solid $gray;
+	}
+	b {
+		color: $lgray;
+		font-size: 12px;
+	}
+	p {
+		padding: 5px 0 0 20px;
+		line-height: 1.5;
+	}
+	ul {
+		padding: 10px;
+		margin-left: 10px;
+		padding-left: 40px;
+		li {
+			font-weight: normal;
+		}
+	}
+	h3 { color: $accent-color; }
+	a {
+		color: $main-color;
+		font-weight: 700;
+		&:hover {
+			color: color($blue, light);
+		}
+	}
+}
+
+.sidebar__scrolling {
+    margin-top: -100px;
+}
+
+.sidebar__bottom {
+    margin-top: 0;
+    bottom: 425px;
+}

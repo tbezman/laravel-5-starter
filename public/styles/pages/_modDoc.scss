@@ -1,0 +1,138 @@
+.modDocView {
+	line-height: 1.5;
+	
+	.modDoc__row {
+		display: block;
+		margin-bottom: 60px;
+		
+		&.modDoc__panel {}
+		&.modDoc__c9 {}
+		&.modDoc__frame {}
+		&.modDoc__bot {}
+	}
+	
+	
+	ul.sitemap {
+		list-style: none;
+		padding-left: 0;
+		
+		ul { 
+			list-style: none;
+			padding-left: 0;
+		}
+		
+		li {
+            border-left: 3px solid $background-color;
+            a {
+                width: 100%;
+                display: block;
+                padding-left: 20px; 
+            }
+            
+			&.active, &:hover { 
+				border-left: 3px solid $accent-color; 
+				color: $accent-color;
+			}
+		}
+		
+		li:not(.sitemap__title) {
+            &:hover {
+                border-left: 1px solid;
+                padding-left: 2px;
+            }
+            a {
+			    padding-left: 40px;
+    			font-size: 14px;
+            }
+		}
+		
+		.sitemap__title {
+			margin-top: 10px;
+			
+			&:first-of-type { margin-top: 0; }
+            & + .sitemap__subitems {
+                display: none;
+            }
+            
+            &.active + .sitemap__subitems {
+                display: block;
+            }
+		}
+
+		a:hover { color: $accent-color; }
+	}
+	
+	
+	h1, h2, h3, img, span, p, ul {
+		display: block;
+		padding-bottom: 20px;
+	}
+	
+	.highlight {
+		background-color: darken($purple-color, 25%);
+		display: inline-block;
+		padding: 0 5px;
+	}
+	
+	.example, .note {
+		color: gray;
+		font-style: italic;
+
+		.highlight {
+			background-color: $gray;
+			color: black;
+		}
+	}
+	
+	img { 
+		max-width: 75%;
+		height: auto;
+		border: 1px solid gray;
+	}
+	
+	section {
+		margin-bottom: 40px;
+		overflow: hidden;
+		*:last-child {
+			padding-bottom: 0;
+		}
+	}
+	
+	ul {
+		padding-left: 40px;
+		
+		.highlight {
+			margin-top: 5px;
+		}
+	}
+	
+	h1, h2, h3 {
+		font-weight: 200;	
+	}
+	
+	h1 {
+		
+	}
+	
+	h2 {
+		border-bottom: 1px solid $accent-color;	
+		margin-bottom: 10px !important;
+		padding-bottom: 5px;
+		font-size: 36px;
+	}
+	
+	h3 {
+		font-size: 28px;
+		padding-bottom: 5px;
+		vertical-align: middle;
+		
+		&::before {
+			content: "+";
+			color: $accent-color;
+			font-size: 18px;
+			vertical-align: middle;
+			padding-right: 10px;
+		}
+	}
+	
+}

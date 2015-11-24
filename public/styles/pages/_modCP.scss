@@ -1,0 +1,400 @@
+.modCPView {
+
+
+  .left, .right {
+    height: auto;
+    margin-top: 60px;
+  }
+
+  .left {
+    width: calc(20% - 40px);
+    float: left;
+  }
+  .right {
+    width: calc(80% - 40px);
+    float: right;
+
+    h1 {
+      width: 100%;
+      display: block;
+      background: $background-color;
+      padding-bottom: 20px;
+    }
+  }
+
+  ul.modCP-nav {
+    list-style: none;
+    display: block;
+    margin-top: 20px;
+
+    li {
+      display: block;
+      padding: 10px;
+      margin: 10px 0;
+
+      &:hover {
+        background: $accent-color;
+        color: white;
+        cursor: pointer;
+      }
+    }
+
+    .selected {
+      background: $accent-color;
+      color: white;
+    }
+  }
+}
+
+.modcp-content {
+
+  select {
+    display: block;
+    width: 60%;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .saveButton, .datePicker, .timePicker {
+    display: block;
+    margin: 20px auto;
+  }
+
+  .create-game__calendar {
+    width: 60%;
+    height: 300px;
+    background-color: $lgray;
+  }
+
+  .modcp-datecontrol {
+    text-align: center;
+
+    & > button {
+      display: inline-block;
+    }
+  }
+
+  .modcp-dateBox {
+    display: block;
+    font-size: 0;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 20px auto;
+	  text-align: center;
+	  
+    .dateBox-title {
+      display: block;
+      text-align: center;
+      font-size: 20px;
+      padding: 10px;
+		padding-bottom: 0;
+    }
+
+    .dateBox-date {
+      height: 54px;
+      width: 50px;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      padding: 6px 0 6px 6px;
+		margin-right: 10px;
+
+      span:nth-of-type(1) { font-size: 12px; }
+      span:nth-of-type(2) { font-size: 24px; }
+    }
+
+    .dateBox-time {
+      height: 54px;
+      display: inline-block;
+      text-align: center;
+      line-height: 54px;
+      span { font-size: 24px; }
+    }
+  }
+
+  .players-applied {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+
+
+    .leaderRow {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      cursor: pointer;
+      border-left: 1px solid $gray;
+      border-right: 1px solid $gray;
+
+      &.leaderRow--header {
+        background-color: darken($purple-color, 15%);
+        border-right: none;
+        border-left: none;
+
+        span {
+          border-right: 1px solid $background-color;
+          &:last-child {
+            border-right: none;
+          }
+          &:hover {
+            background-color: darken($purple-color, 5%);
+          }
+        }
+      }
+
+      &:not(.leaderRow--header):nth-child(even) {
+        background-color: $dgray;
+      }
+
+      &:not(.leaderRow--header):hover {
+        background-color: $lgray;
+        color: $black;
+      }
+    }
+
+    span {
+      display: inline-block;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    span.username { width: 20%; }
+    span.cloud9 { width: 20%; }
+    span.games { width: calc(60% / 5); }
+    span.ratio { width: calc(60% / 5); }
+    span.html { width: calc(60% / 5); }
+    span.css { width: calc(60% / 5); }
+    span.js { width: calc(60% / 5); }
+
+    .loadMore {
+      @include transition(all, 250ms, ease-in);
+      padding: 10px 0 15px 0;
+      border: 1px solid $gray;
+      color: $gray;
+      cursor: pointer;
+      border-top: none;
+      &:hover {
+        color: $accent-color;
+        border-color: $accent-color;
+        border-top: 1px solid;
+        padding-top: 15px;
+      }
+    }
+
+  }
+
+  .players-selected {
+    display: inline-block;
+    width: calc(50% - 2px);
+    margin-top: 30px;
+    text-align: center;
+
+    vertical-align: top;
+
+    .leaderRow {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      cursor: pointer;
+      border-left: 1px solid $gray;
+      border-right: 1px solid $gray;
+
+      &.leaderRow--header {
+        background-color: darken($purple-color, 15%);
+        border-right: none;
+        border-left: none;
+
+
+        span {
+          border-right: 1px solid $background-color;
+          &:last-child {
+            border-right: none;
+          }
+          &:hover {
+            background-color: darken($purple-color, 5%);
+          }
+        }
+      }
+
+      &.redplayers {
+        background-color: $accent-color;
+
+        span:hover {
+          background-color: darken($accent-color, 5%);
+        }
+      }
+
+      &.blueplayers {
+        background-color: $main-color;
+
+        span:hover {
+          background-color: darken($main-color, 5%);
+        }
+      }
+
+      &:not(.leaderRow--header):nth-child(even) {
+        background-color: $dgray;
+      }
+
+      &:not(.leaderRow--header):hover {
+        background-color: $lgray;
+        color: $black;
+      }
+    }
+
+    span {
+      display: inline-block;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    span.position { width: 30%; }
+    span.username { width: 35%; }
+    span.cloud9 { width: 35%; }
+    span.forfeit { width: 35%; }
+    a.forfeited { padding: 6px 10px; background-color: $accent-color; }
+    a.forfeited:hover { background-color: $main-color; }
+  }
+
+
+  .livegame {
+    width: calc(45% - 2px);
+    &:nth-of-type(1) {
+      margin-right: 10%;
+    }
+    select {
+      margin-top: 10px;
+      display: inline-block;
+      width: calc(70% - 6px);
+    }
+    .button {
+      width: 30%;
+      height: 43px;
+    }
+
+  }
+
+  .livegame--objectives {
+    margin-top: 20px;
+    display: block;
+    border-left: 1px solid $dgray;
+    border-right: 1px solid $dgray;
+    border-bottom: 1px solid $dgray;
+    .objectives--header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      span {
+        border-right: 1px solid $background-color;
+        &:last-child {
+          border-right: none;
+        }
+      }
+      .list--objective {
+        width: 80%;
+        background-color: $dgray;
+        display: inline-block;
+        text-align: center;
+        padding: 15px 0;
+        border-right: 1px solid $background-color;
+      }
+      .red--objective {
+        @extend .list--objective;
+        width: 10%;
+        background-color: $accent-color;
+      }
+      .blue--objective {
+        @extend .list--objective;
+        width: 10%;
+        background-color: $main-color;
+      }
+    }
+    .livegame--objective_row {
+      display: block;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      &:hover {
+        background-color: $gray;
+      }
+      .objective-bonus {
+        color: $gold;
+      }
+      .livegame_objective {
+        width: 80%;
+        min-height: 58px;
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+        padding: 10px;
+
+      }
+      .objective-check {
+        width: 10%;
+        min-height: 40px;
+        margin-top: 9px;
+        vertical-align: middle;
+      }
+
+    }
+
+  }
+
+
+
+  .objs-input {
+    display: block;
+    width: 80%;
+    margin: 30px auto;
+    textarea {
+      width: 100%;
+      display: block;
+      padding: 16px;
+      margin: 20px 0 20px 0;
+      resize: none;
+    }
+  }
+  .theme-input {
+    @extend .objs-input;
+    input {
+      width: 100%;
+      display: block;
+      padding: 16px;
+      margin: 20px 0 20px 0;
+      resize: none;
+    }
+  }
+
+  .livegame--winner {
+    width: 60%;
+    min-height: 100px;
+    margin: 20px auto;
+    position: relative;
+    .blue-winner, .red-winner {
+      cursor: pointer;
+      position: absolute;
+      width: 200px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border: 1px solid #FFF;
+    }
+    .red-winner {
+      right: 0;
+    }
+    .blue-winner:hover {
+      background-color: $main-color;
+    }
+    .red-winner:hover {
+      background-color: $accent-color;
+    }
+    .blue-active {
+      background-color: $main-color;
+    }
+    .red-active {
+      background-color: $accent-color;
+    }
+  }
+}

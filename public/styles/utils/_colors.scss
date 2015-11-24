@@ -1,0 +1,117 @@
+@function color($color, $value: base) {
+	@return map-get($color, $value);
+}
+
+$red: (
+	light:  #f44336,
+	base:  #d32f2f,
+	dark:  #b71c1c
+);
+
+$pink: (
+	light:  #e91e63,
+	base:  #c2185b,
+	dark:  #880e4f
+);
+
+$purple: (
+	light:  #9c27b0,
+	base:  #7b1fa2,
+	dark:  #4a148c
+);
+
+$deep-purple: (
+	light:  #673ab7,
+	base:  #512da8,
+	dark:  #311b92
+);
+
+$indigo: (
+	light:  #3f51b5,
+	base:  #303f9f,
+	dark:  #1a237e
+);
+
+$blue: (
+	light:  #2196f3,
+	base:  #1976d2,
+	dark:  #0d47a1
+);
+
+$light-blue: (
+	light:  #03a9f4,
+	base:  #0288d1,
+	dark:  #01579b
+);
+
+$cyan: (
+	light:  #00bcd4,
+	base:  #0097a7,
+	dark:  #006064
+);
+
+$teal: (
+	light:  #009688,
+	base:  #00796b,
+	dark:  #004d40
+);
+
+$green: (
+	light:  #4caf50,
+	base:  #388e3c,
+	dark:  #1b5e20
+);
+
+$light-green: (
+	light:  #8bc34a,
+	base:  #689f38,
+	dark:  #33691e
+);
+
+$lime: (
+	light:  #cddc39,
+	base:  #afb42b,
+	dark:  #827717
+);
+
+$yellow: (
+	light:  #ffeb3b,
+	base:  #fbc02d,
+	dark:  #f57f17
+);
+
+$amber: (
+	light:  #ffc107,
+	base:  #ffa000,
+	dark:  #ff6f00
+);
+
+$orange: (
+	light:  #ff9800,
+	base:  #f57c00,
+	dark:  #e65100
+);
+
+$deep-orange: (
+	light:  #ff5722,
+	base:  #e64a19,
+	dark:  #bf360c
+);
+
+$brown: (
+	light:  #795548,
+	base:  #5d4037,
+	dark:  #3e2723
+);
+
+$grey: (
+	light:  #9e9e9e,
+	base:  #616161,
+	dark:  #212121
+);
+
+$blue-grey: (
+	light:  #607d8b,
+	base:  #455a64,
+	dark:  #263238
+);

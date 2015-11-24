@@ -1,0 +1,278 @@
+.dashboardView {
+  margin-top: 60px;
+
+  .dashboardHomeView {
+    font-size: 0;
+
+    /******************************************************/
+    /* Dashboard Sections
+    /******************************************************/
+
+    .profile-basic, .profile-badges, .profile-warrior, .profile-links, .profile-activity {
+      // background-color: $dgray;
+      border: 1px solid $gray;
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      height: 240px;
+    }
+
+    .profile-basic, .profile-links {
+      background: none;
+    }
+
+    /******************************************************/
+    /* General Segments
+    /******************************************************/
+
+    .profile__header {
+      line-height: 25px;
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      background-color: $xdgray;
+
+      i, h4 {
+        display: inline-block;
+        padding: 5px;
+        vertical-align: middle;
+      }
+    }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      background-color: $black;
+      vertical-align: bottom;
+
+      .barpercent {
+        height: 100%;
+        background-color: $accent-color;
+      }
+    }
+
+    .row--flexbox {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      line-height: 1;
+
+      &.xp--row {
+        padding: 30px 0 5px 0;
+      }
+
+      .statBox {
+        font-size: 16px;
+        font-weight: 400;
+        display: inline-block;
+
+        h4 {
+          font-size: 38px;
+          font-weight: 200;
+          padding-top: 5px;
+        }
+
+        span {
+          font-size: 12px;
+          display: inline-block;
+        }
+      }
+    }
+
+    .innerLineHeight {
+      line-height: calc(240px - 35px);
+    }
+
+    .profile-view-button {
+      padding: 5px 10px;
+      border: 1px solid white;
+      font-size: 12px;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      margin-top: 10px;
+
+      &:hover {
+        color: $dgray;
+        background: $white;
+      }
+    }
+
+    /******************************************************/
+    /* Badge Section
+    /******************************************************/
+
+    .profile-badges {
+      width: calc(35% - 20px);
+      margin-right: 20px;
+      text-align: center;
+      font-size: 0;
+
+      .innerLineHeight { padding: 0 20px; line-height: 1; }
+
+      .profile-badges__total, .profile-view-button {
+        line-height: 1;
+      }
+      .profile-badges__total {
+        line-height: 50px;
+        padding-top: 40px;
+        font-size: 48px;
+        font-weight: 400;
+
+        &:before {
+          content: "\f132";
+          font-family: $fontawesome;
+          padding-right: 10px;
+          font-size: 38px;
+          vertical-align: top;
+        }
+      }
+    }
+
+    /******************************************************/
+    /* Warrior Section
+    /******************************************************/
+
+    .profile-warrior {
+      width: 65%;
+        
+      .profile-warrior__signup {
+          position: absolute;
+          z-index: 8;
+          background-color: rgba(25,25,25,0.95);
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          text-align: center;
+          img {
+              width: 100px;
+              margin: 20px;
+          }
+          h2 {
+              font-size: 20px;   
+          }
+          span {
+              margin: 20px;
+              font-size: 14px;
+          }
+      }
+
+      .profile-warrior__rank, .profile-warrior__stats {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+        font-size: 0;
+      }
+
+      .profile-warrior__rank {
+        width: 30%;
+        text-align: center;
+        border-right: 1px solid $dgray;
+
+        p {
+          font-size: 20px;
+          text-align: center;
+          font-weight: 200;
+          padding-top: 5px;
+        }
+      }
+
+      .profile-warrior__stats {
+        width: 70%;
+        padding: 0 20px;
+        text-align: center;
+        .stattop {
+          margin-top: 12px;
+        }
+      }
+
+      .warrior-link-options {
+        padding: 0;
+        padding-top: 11px;
+      }
+    }
+
+    /******************************************************/
+    /* Activity Log
+    /******************************************************/
+
+    .profile-activity {
+      width: 100%;
+      height: auto;
+      font-size: 14px;
+      margin-top: 20px;
+      padding-bottom: 10px;
+
+      ul.activityList {
+        width: 100%;
+        list-style: none;
+        max-height: 250px;
+        overflow-y: scroll;
+
+        li {
+          margin: 0 20px;
+          padding: 15px 0;
+          border-bottom: 1px solid $dgray;
+          font-size: 0;
+        }
+
+        .activityDate, .activityTitle, .activityReward {
+          display: inline-block;
+          font-size: 12px;
+          margin-right: 20px;
+          overflow: hidden;
+        }
+
+        .activityDate {
+          width: calc(13% - 20px);
+          color: $lgray;
+        }
+
+        .activityTitle {
+          width: calc(62% - 20px);
+        }
+
+        .activityReward {
+          width: 25%;
+          margin-right: 0;
+          text-align: right;
+        }
+
+        .db, .xp {
+          display: inline-block;
+          margin-left: 10px;
+        }
+
+        .db {
+          &:after {
+            content: " DevBits";
+          }
+        }
+
+        .xp {
+          &:after {
+            content: " XP";
+          }
+        }
+
+        .reward--gain {
+          color: color($green, light);
+          &:before {
+            content: "+";
+          }
+        }
+
+        .reward--lose {
+          color: color($red, light);
+          &:before {
+            content: "-";
+          }
+        }
+
+        .reward--none {	display: none; }
+      }
+    }
+  }
+}

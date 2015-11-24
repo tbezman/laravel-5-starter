@@ -1,0 +1,16 @@
+{
+  "styles": {
+    "input": "public/styles/main.scss",
+    "output": "public/styles/"
+  },
+
+  "scripts": {
+    "input": "public/scripts",
+    "output": "public/scripts",
+    "suffix": "js"
+  },
+
+  "build": {
+      "output": "public/dist/"
+  }
+}

@@ -1,0 +1,48 @@
+.bronze-rank {
+  .st0 {
+    fill: $bronze-accent;
+  }
+  .st1 {
+    fill: $bronze;
+  }
+}
+
+.silver-rank {
+  .st0 {
+    fill: $silver-accent;
+  }
+  .st1 {
+    fill: $silver;
+  }
+}
+
+.gold-rank {
+  .st0 {
+    fill: $gold-accent;
+  }
+  .st1 {
+    fill: $gold;
+  }
+}
+
+.platinum-rank {
+  .st0 {
+    fill: $platinum-accent;
+  }
+  .st1 {
+    fill: $platinum;
+  }
+}
+
+.diamond-rank {
+  .st0 {
+    fill: $diamond-accent;
+  }
+  .st1 {
+    fill: $diamond;
+  }
+}
+
+.rank--no-name .name{
+  display: none;
+}

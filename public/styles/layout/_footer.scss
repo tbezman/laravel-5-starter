@@ -1,0 +1,142 @@
+footer {
+  display: inline-block;
+  margin-top: 50px;
+  width: 100%;
+  background-color: $foreground-color;
+
+
+	.newsletter-box {
+	  border-top: 3px solid $accent-color;
+	  padding: 25px 0 30px 0;
+	  width: 100%;
+	  background: $dgray;
+	  text-align: center;
+
+	  h2 {
+		font-size: 24px;
+	  }
+	}
+
+	.newsletter-box__button {
+	  width: auto !important;
+	  height: auto !important;
+	  margin-top: 20px;
+	  display: inline-block;
+	  font-size: 16px;
+	}
+
+	.footer-advertise {
+		margin: 20px 0 0 0;
+		height: 100px;
+
+		.advert {
+			height: 100%;
+			width: calc(50% - 10px);
+			padding: 0;
+			float: left;
+			text-align: center;
+			border: 1px solid $gray;
+			background: $dgray;
+			position: relative;
+			
+			&:last-child { 
+				float: right; 
+				margin-left: 20px;
+			}
+
+			span {
+				display: block;
+			}
+
+			&:hover {
+				background: $gray;
+			}
+			
+			.advert__text {
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+
+	.sitemap {
+		@include flex;
+		justify-content: space-between;
+		margin-bottom: 10px;
+		
+		ul {
+			width: 20%;
+			padding: 20px;
+			list-style: none;
+			font-size: 0;
+		}
+		li {
+			color: $lgray;
+			font-size: 14px;
+			margin: 5px 0;
+			&:first-child {
+				display: block;
+				padding-bottom: 5px;
+				margin-bottom: 10px;
+				border-bottom: 1px solid $accent-color;
+			}
+		}
+		a {
+			color: $lgray;
+			&:hover { color: $accent-color; }
+		}
+		
+		ul.footer-links__social {
+			text-align: center;
+			
+			li:first-child { text-align: left; }
+			li:not(.footer-social-title) { 
+				width: calc(33.33% - 10px);
+				margin: 5px;
+				display: inline-block;
+			}
+			a {
+				
+				display: block;
+				font-size: 24px;
+			}
+		}
+
+		$social-names: twitter, facebook, gplus, reddit, twitch, youtube;
+		$social-colors: $twitter-color, $facebook-color, $gplus-color, $reddit-color, $twitch-color, $youtube-color;
+		@each $current-color in $social-colors {
+			$i: index($social-colors, $current-color);
+			.footer-links__social li:nth-child(#{$i + 1}):hover a {
+				color: nth($social-colors, $i);
+			}
+		}
+	}
+	.footer-legal {
+		@include flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 0;
+		border-top: 1px solid $gray;
+		font-size: 14px;
+		
+		p, a {
+			color: $lgray;
+			display: inline-block;
+		}
+		
+		a {
+			margin-left: 10px;
+			&:before {
+				content: "|";
+				margin-right: 10px;
+				color: $gray;
+			}
+			&:first-child:before { content: ""; }
+			&:hover { color: $accent-color; }
+		}
+	}
+}

@@ -1,0 +1,445 @@
+.teamView {
+	margin-top: 60px;
+	font-size: 0;
+
+	.right { position: relative; }
+	.teamOverlay {
+		width: 60%;
+		margin: 0 auto;
+		height: auto;
+		position: relative;
+		
+		img {
+			width: 100%;
+			height: auto;
+		}
+		
+		.teamOverlay__dialog {
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 16px;
+			text-align: center;
+			
+			.teamDialog__inner {
+				padding: 40px;
+				margin: 0 auto;
+				background-color: $black;
+				border: 2px solid $gray;
+				border-radius: 10px;
+				display: inline-block;
+			}
+			
+			h1 {
+				font-size: 38px;
+				padding: 0 0 30px;
+			}
+			
+			.button {
+				border: 2px solid $main-color;
+				padding: 15px 30px;
+				font-weight: bold;
+				&:hover { border-color: $accent-color; }
+			}
+			
+			.button--clear {
+				border: 2px solid white;
+				position: relative;
+				margin-right: 30px;
+				
+				&:hover {
+					background-color: white;
+					border-color: white;
+					color: $black;
+				}
+			}
+			
+			.button--disabled {
+				pointer-events: none;
+				color: $gray;
+				border-color: $gray;
+				background: transparent;
+			}
+			
+			.invite-pill {
+				height: auto;
+				width: auto;
+				background-color: color($red, light);
+				border-radius: 100px;
+				color: white;
+				font-weight: bold;
+				position: absolute;
+				padding: 3px 10px;
+				right: -17px;
+				top: -12px;
+			}
+			
+			.flex {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+	}
+	
+	
+	
+	
+	.teams-left {
+		display: inline-block;
+		vertical-align: top;
+		width: 30%;
+
+		.roster	{
+			border: 1px solid $gray;
+
+			.roster-header {
+				padding: 0 15px;
+				background: $xdgray;
+
+				.roster-title {
+					line-height: 50px;
+					font-size: 18px;
+
+					&:before {
+						content: "\f091";
+						font-family: FontAwesome;
+						margin: 0 15px 0 0;
+					}
+				}
+
+				.invite-roster,
+				.edit-roster {
+					float: right;
+					margin: 15px 0 0 10px;
+					padding: 0 10px;	
+					line-height: 20px;
+					font-size: 13px;
+					text-transform: uppercase;
+				}
+			}
+
+			.roster-players {
+				padding: 0 20px;
+
+				.player {
+					display: block;
+					line-height: 42px;
+					font-size: 13px;
+					border-top: 1px solid $dgray;
+
+					&:first-child {
+						border: none;
+					}
+
+					&.offline:after,
+					&.online:after { 
+						content: "";
+						float: right;
+						margin: 16px 0 0;
+						width: 10px;
+						height: 10px;
+						border-radius: 10px;
+						background: #28ce20;
+					}
+
+					&.offline:after {
+						background: color($red, light);
+					}
+				}
+
+				&.editable {
+
+					.player.online:after,
+					.player.offline:after {
+						content: "\f00d";
+						margin: 0;
+						width: auto;
+						height: auto;
+						font-family: FontAwesome;
+						font-size: 16px;
+						background: transparent;
+						color: color($red, light);
+						@include animation(shake, 0.8s, infinite, linear);
+					}
+				}
+			}
+		}
+
+		.team-stat {
+			margin: 20px 0 0;
+			padding: 20px 0;
+			text-align: center;
+			border: 1px solid $gray;
+
+			span {
+				display: block;
+				margin: 3px 0 0;
+				line-height: 20px;
+				font-weight: 200;
+				font-size: 28px;
+
+				&:first-child {
+					margin: 0;
+					line-height: normal;
+					text-transform: uppercase;
+					font-weight: 400;
+					font-size: 13px;
+				}
+			}
+		}
+
+		.disband-team {
+			display: block;
+			margin: 20px 0 0;
+			text-align: center;
+			text-decoration: underline;
+			font-size: 13px;
+			color: color($red, light);
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.teams-right {
+		display: inline-block;
+		vertical-align: top;
+		width: 68%;
+		margin: 0 0 0 2%;
+
+		.team-header {
+			padding: 20px 20px 20px 30px;
+			border: 1px solid $gray;
+
+			.team-icon {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				margin: 9px 10% 9px 0;
+				width: 21.5%;
+				border: 1px solid transparent;
+				@include transition(all, 0.2s, ease);
+
+				&.active:before {
+					content: "\f030";
+					font-family: FontAwesome;
+					font-size: 30px;
+					position: absolute;
+					box-sizing: border-box;
+					top: 0; left: 0;
+					z-index: 5;
+					width: 100%;
+					line-height: 120px;
+					text-align: center;
+					cursor: pointer;
+					color: #fff;
+					@include opacity(0);
+					@include transition(all, 0.2s, ease);
+				}
+
+				img {
+					width: 100%;
+					@include transition(all, 0.2s, ease);
+				}
+
+				&:hover.active {						
+
+					&:before {
+						border: 1px solid $lgray;
+						@include opacity(1);
+						@include transition(all, 0.2s, ease);
+					}
+
+					img {
+						padding: 10px;
+						@include opacity(0.6);
+						@include transition(all, 0.2s, ease);
+					}
+				}
+			}
+
+			.team-info {
+				display: inline-block;
+				vertical-align: top;
+				width: 68.5%;
+				height: 138px;
+
+				.team-name {
+					display: block;
+					font-weight: 500;
+					font-size: 36px;
+				}
+
+				.team-tag {
+					display: block;
+					font-size: 18px;
+				}
+
+				.team-rank {
+					float: right;
+					width: 50px;
+					height: 50px;
+
+					svg {
+						width: 100%;
+						height: auto;
+					}
+				}
+
+				.team-xp {
+					position: relative;
+					top: 40px;
+					display: block;
+					width: 100%;
+
+					span {
+						float: right;
+						margin: 0 0 5px;
+						font-size: 12px;
+
+						&:first-child {
+							float: none;
+							display: inline-block;
+						}
+					}
+
+					.xp-bar {
+						width: 100%;
+						height: 10px;
+						background: #000;
+
+						.xp-total {
+							height: 10px;
+							background: $accent-color;
+						}
+					}
+				}
+			}
+		}
+
+		.team-history {
+			margin: 20px 0 0;
+			border: 1px solid $gray;
+
+			.team-history--header {
+				padding: 0 15px;
+				background: $xdgray;
+
+				.history-title {
+					line-height: 50px;
+					font-size: 18px;
+					color: #fff;
+
+					&:before {
+						content: "\f091";
+						font-family: FontAwesome;
+						margin: 0 15px 0 0;
+					}
+				}
+
+				.team-wins,
+				.team-losses {
+					float: right;
+					margin: 0 0 0 15px;
+					line-height: 50px;
+					font-size: 13px;
+					color: #28ce20;
+				}
+
+				.team-losses { color: color($red, light); }
+			}
+
+			.team-history--content {
+				max-height: 350px;
+				padding: 0 20px 0 0;
+				overflow-y: scroll;
+
+				.team-history--game {
+					border-top: 1px solid $gray;
+
+					&:first-child {
+						border: none;
+					}
+
+					&.win--game {
+
+						&:before {
+							content: "W";
+							color: #28ce20;
+							border-color: #28ce20;
+						}
+
+						.xp {
+							color: #28ce20;
+						}
+					}
+
+					.match-stat {
+						display: inline-block;
+						line-height: 50px;
+						font-size: 13px;
+					}
+
+					&:before       { width: 7% ; }
+					.opposition    { width: 35%; font-size: 18px; }
+					.score 		   { width: 12%;  }
+					.date 		   { width: 15%; }
+					.xp   		   { width: 11%; color: color($red, light); }
+					.match-details { width: 20%; }
+
+
+					&:before {
+						content: "L";
+						display: inline-block;
+						line-height: 50px;
+						padding: 0 0 0 15px;
+						font-size: 15px;
+						color: color($red, light);
+						border-left: 5px solid;
+						border-color: color($red, light);
+					}
+
+					.score {
+						font-weight: 300;
+						font-size: 16px;
+
+						span { padding: 0 3px; }
+					
+						.team-blue { color: $main-color; }
+						.team-red  { color: $accent-color; }
+					}
+
+					.match-details {
+						display: inline-block;
+						text-align: center;
+						margin: 10px 0;
+						line-height: 30px;
+						font-size: 13px;
+						color: #000;
+						background: $lgray;
+
+						&:hover {
+							background: darken($lgray, 10%);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include keyframes(shake) {
+	0% { -webkit-transform: translate(1px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -1px) rotate(-6deg); }
+	20% { -webkit-transform: translate(-1px, 0px) rotate(6deg); }
+	30% { -webkit-transform: translate(0px, 1px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -0px) rotate(6deg); }
+	50% { -webkit-transform: translate(-0px, 1px) rotate(-6deg); }
+	60% { -webkit-transform: translate(-1px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(1px, 0px) rotate(-6deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(6deg); }
+	90% { -webkit-transform: translate(1px, 1px) rotate(0deg); }
+	100% { -webkit-transform: translate(0px, -1px) rotate(-6deg); }
+}

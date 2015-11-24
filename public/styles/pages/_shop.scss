@@ -1,0 +1,110 @@
+.shopView {
+	margin-top: 60px;
+	
+	
+	.fa { 
+		padding-right: 10px;
+	}
+
+	.shop-header { 
+		display: block;
+		text-align: center;
+		margin-bottom: 40px;
+		
+		h1, img {
+			vertical-align: middle;
+		}
+		h1 {
+			font-size: 60px;
+		}
+		img {
+			height: 60px;
+			margin-right: 15px;
+		}
+	}
+
+	.shop-nav {
+		display: block;
+		border-bottom: 5px solid $accent-color;
+		span {
+			display: inline-block;
+			width: calc(25% - 3px);
+			text-align: center;
+			padding: 10px 0 10px 0;
+			&:hover, &.active {
+				background-color: $accent-color;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.shop-box {
+		
+	}
+
+	.shop-list__itemcontainer {
+		display: block;
+		padding: 15px;
+		font-size: 0;
+		
+		&:nth-of-type(2n) {
+			background-color: $dgray;
+		}
+	}
+
+	
+	.shop-list__thumb {
+		width: 6%;
+		height: 50px;
+		border: 1px solid white;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.shop-list__name {
+		display: inline-block;
+		width: calc(84% - 30px);
+		vertical-align: middle;
+		margin: 0 15px;
+		
+		h3 {
+			font-size: 16px;
+		}
+		p {
+			font-size: 13px;
+		}
+	}
+
+	.shop-list__price {
+		display: inline-block;
+		width: 10%;
+		height: 100%;
+		background: transparent;
+		border: 1px solid $devbit-color;
+		text-align: center;
+		vertical-align: middle;
+		padding: 2px 0;
+		
+		img, p {
+			vertical-align: middle;
+		}
+		
+		img {
+			height: 15%;
+			width: 15%;
+			margin: 0;
+		}
+		p {
+			display: inline-block;
+			text-align: right;
+			font-size: 16px;
+			padding-right: 5px;
+		}
+		&:hover {
+			background-color: $devbit-color;
+			cursor: pointer;
+		}
+	}
+
+
+}

@@ -1,0 +1,124 @@
+.badgesView {
+
+	.badges-container {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		
+		.badge-box {
+			width: calc(25% - 19px);
+			background: $dgray;
+			margin: 0 25px 20px 0;
+			padding: 10px;
+			text-align: center;
+			opacity: 0.5;
+
+			&:nth-child(4n) {
+				margin-right: 0;
+			}
+			
+			&.badge-box--complete {
+				opacity: 1;
+				background: $gray;
+				border: 1px solid;
+				span { color: white; }
+			}
+			
+			&.badge-box--bronze {
+				&.badge-box--complete { border-color: $bronze; }
+				span.badge-tier { color: $bronze; }
+			}
+			&.badge-box--silver {
+				&.badge-box--complete { border-color: $silver; }
+				span.badge-tier { color: $silver; }
+			}
+			&.badge-box--gold {
+				&.badge-box--complete { border-color: $gold; }
+				span.badge-tier { color: $gold; }
+			}
+			&.badge-box--diamond {
+				&.badge-box--complete { border-color: $diamond; }
+				span.badge-tier { color: $diamond; }
+			}
+			
+			img {
+				width: 50%;
+				margin: 0 auto;
+				display: block;
+			}
+			
+			h2 {
+				padding: 20px 0 10px 0;
+				font-size: 1.5rem;
+			}
+			
+			.badge-progress {
+				width: 100%;
+				line-height: 25px;
+				background: $black;
+				position: relative;
+			}
+			
+			.badge-progress__bar {
+				width: 0%;
+				height: 100%;
+				background: $accent-color;
+				position: absolute;
+			}
+			
+			span {
+				font-size: 1rem;
+				position: relative;
+				z-index: 2;
+			}
+					
+			.badge-properties {
+				line-height: 15px;
+				height: 15px;
+				margin-bottom: 10px;
+				
+				span {
+					line-height: 15px;
+					font-size: 1rem;
+				}
+				
+				i {
+					padding-right: 5px;
+				}
+
+				span.who-earned { float: left; }
+				span.badge-tier { 
+					float: right;
+					border: 1px solid;
+					padding: 0px 5px;
+					font-size: 0.6rem;
+					vertical-align: middle;
+				}
+			}
+			
+			.reward-amount {
+				height: 15px;
+				line-height: 15px;
+				text-align: center;
+				margin: 10px 0 5px 0;
+				
+				span, img {
+					vertical-align: middle;
+				}
+				
+				span {
+					
+				}
+
+				img {
+					height: 100%;
+					width: auto;
+					display: inline-block;					
+				}
+			}
+		} /* badge-box */
+	
+	}
+
+}

@@ -1,0 +1,61 @@
+.addBlogPostDialogView {
+  border-radius: 5px !important;
+	background-color: $lgray !important;
+
+  overflow-y: scroll;
+
+  .dialog-container {
+	  background-color: $lgray;
+
+    width: 800px;
+    min-height: 400px;
+
+    border-radius: 5px;
+
+    padding: 15px;
+
+    .dialog-container__title {
+      text-align: center;
+      color: white;
+
+      font-weight: bold;
+      font-size: 30px;
+
+      margin-bottom: 20px !important;
+    }
+
+    .dialog-container__actions{
+      margin-top: 20px;
+    }
+  }
+
+  .form__input {
+    margin: 0;
+  }
+
+  .logo {
+    height: 25px;
+    width: 25px;
+
+    margin: 0;
+  }
+
+  .logo-title {
+    display: none;
+  }
+
+  .ta-text.ta-editor {
+    overflow: scroll;
+    max-height: 350px;
+  }
+
+  .descriptionArea {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  [text-angular] textarea {
+    background-color: $background-color;
+  }
+
+}

@@ -1,0 +1,294 @@
+.warriorRegView {
+
+  .title--line {
+    margin-top: 60px!important;
+    margin-bottom: 10px !important;
+    &:before {
+      border-color: $gray;
+    }
+    span {
+      background-color: $dgray;
+      font-size: 24px;
+      color: $lgray;
+    }
+  }
+
+  .warrior-header {
+    width: 80%;
+    margin: 80px auto -50px auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
+    img {
+      height: 100px;
+      margin: 0 auto;
+      display: block;
+    }
+
+
+    .diamond-pattern--blue, .diamond-pattern--red {
+      width: 40%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      overflow: hidden;
+    }
+
+    .diamond-pattern--blue {
+      left: 0;
+      span {
+        color: $main-color;
+        animation: colorchange 3s infinite linear;
+      }
+      span:nth-child(odd) {
+        animation-delay: 1.5s;
+      }
+    }
+    .diamond-pattern--red {
+      right: 0;
+      span {
+        color: $accent-color;
+        animation: colorchange 3s infinite linear;
+      }
+      span:nth-child(odd) {
+        animation-delay: 1.5s;
+      }
+    }
+
+  }
+
+  form.warriorForm {
+    width: 80%;
+    background-color: $dgray;
+    padding: 80px 40px;
+    margin: 0 auto 80px auto;
+    position: relative;
+    text-align: center;
+
+    h1 {
+      margin-left: 20px;
+    }
+
+    &:before, &:after {
+      content: "";
+      width: 50%;
+      height: 1px;
+      position: absolute;
+      top: 0;
+    }
+    &:before { left: 0;	background: $main-color; }
+    &:after { right: 0; background: $accent-color; }
+
+    .gradient-bar {
+      bottom: 0;
+    }
+
+    input, textarea {
+      width: 60%;
+      display: block;
+      padding: 10px;
+      background: $background-color;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      min-height: 160px;
+    }
+
+    .split-inputs {
+      width: 60%;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+
+      input {
+        width: calc(50% - 10px);
+        display: inline-block;
+        margin: 0;
+      }
+
+      &.dateofbirth {
+
+        span { width: calc(20% - 10px); align-self: center; }
+        input:nth-child(2) { width: calc(40% - 10px); }
+        input:nth-child(3) { width: calc(15% - 10px); }
+        input:nth-child(4) { width: calc(25% - 10px); }
+      }
+    }
+
+    .img-input {
+      width: 60%;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+
+      img, input {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      img {
+        width: 38px;
+        height: 38px;
+      }
+
+      input {
+        width: calc(100% - (38px + 20px));
+        margin: 0;
+      }
+    }
+
+    button {
+      width: 30%;
+      padding: 15px 0;
+      margin-top: 40px;
+      display:inline-block;
+    }
+
+    .c9-register, .ts-register {
+      width: 60%;
+      //background-color: transparentize(darken($c9-color, 25%), 0.8);
+      border: 1px solid $c9-color;
+      margin: 0 auto;
+
+      img { height: 30px; display: block; margin: 20px auto 0 auto; }
+      span { font-size: 14px; padding: 6px 0 10px 0; display: block; }
+    }
+
+    .ts-register {
+      border-color: #C5CDDB;
+      margin-top: 40px;
+    }
+
+    .toggleAccept {
+      width:60%;
+      text-align: center;
+      border: 1px solid $gray;
+      margin: 0 auto 20px auto;
+      font-size: 0;
+
+      span {
+        width: 50%;
+        display: inline-block;
+        background: $xdgray;
+        color: $white;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 10px 0;
+
+
+        &.decline.selected {
+          background: color($red, dark);
+        }
+        &.accept.selected {
+          background: color($green, dark);
+        }
+
+        &:hover {
+          background-color: $gray;
+        }
+
+        &.selected { cursor: default; }
+      }
+    }
+
+  }
+
+  .skillBox {
+    width: 60%;
+    margin: 0 auto;
+
+
+    .positionMain {
+
+      &.positionMain--html {
+        h6 { margin-top: 0; }
+        h6.skillName { color: $html-color; }
+        .html-hover {
+          background-color: $html-color;
+        }
+        span:not(.selected):hover {
+          background: $html-color;
+          & ~ span { background: $html-color; }
+        }
+      }
+
+      &.positionMain--css {
+        h6.skillName { color: $css-color; }
+        .css-hover {
+          background-color: $css-color;
+        }
+        span:not(.selected):hover {
+          background: $css-color;
+          & ~ span { background: $css-color; }
+        }
+      }
+
+      &.positionMain--js {
+        h6.skillName { color: $js-color; }
+        .js-hover {
+          background-color: $js-color;
+        }
+        span:not(.selected):hover {
+          background: $js-color;
+          & ~ span { background: $js-color; }
+        }
+      }
+
+
+      & > p {
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.3;
+        color: $lgray;
+        padding: 10px 0 40px 0;
+        display: block;
+      }
+
+      p.no-margin-bottom {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    .positionInfo {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      h6 {
+        margin: 5px 0;
+        font-size: 16px;
+      }
+    }
+
+    .skillMeter {
+      width: 100%;
+      height: 15px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+
+      span {
+        width: calc(20% - 5px);
+        height: 100%;
+        background: $gray;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @keyframes colorchange {
+    50% {
+      color: $gray;
+    }
+    80% {
+      color: $gray;
+    }
+  }
+} /* .warriorRegView */

@@ -1,0 +1,36 @@
+.md-dialog-container--confirmDialog {
+  border-radius: 5px !important;
+  background-color: transparent !important;
+  border: 1px solid $gray;
+
+  .dialog-container__header {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .account-transfer-icons {
+    text-align: center;
+    font-size: 3rem;
+
+    margin-bottom: 15px;
+
+    .fa-arrows-h {
+      color: $accent-color;
+    }
+  }
+
+  .dialog-container__message {
+    font-weight: 200;
+  }
+
+  .dialog-container__actions {
+    text-align: center;
+
+    margin-top: 20px;
+
+    button {
+      margin: 10px;
+      padding: 10px 15px;
+    }
+  }
+}

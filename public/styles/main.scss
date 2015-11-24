@@ -1,0 +1,282 @@
+// REFER TO http://sass-guidelin.es/#the-7-1-pattern
+// 0. Fonts
+@import url(https://fonts.googleapis.com/css?family=Oswald|Roboto:100,100italic,400,400italic,700|Montserrat|Open+Sans:400,700);
+
+// 1. vendors/
+@import "vendors/bootstrap";
+@import "vendors/jquery-ui";
+
+// 2. utils/
+@import "utils/variables";
+@import "utils/colors";
+@import "utils/functions";
+@import "utils/mixins";
+@import "utils/placeholders";
+@import "utils/keyframes";
+
+// 3. base/
+@import "base/reset";
+@import "base/global";
+@import "base/typography";
+
+// 4. layout/
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/forms";
+
+// 5. components/
+@import "components/logo";
+@import "components/carousel";
+@import "components/cover";
+@import "components/dropdown";
+@import "components/buttons";
+@import "components/fontawesome";
+
+// 6. pages/
+@import "pages/home";
+@import "pages/coming";
+@import "pages/contact";
+@import "pages/loginDialog";
+@import "pages/signupDialog";
+@import "pages/editPlayerDialog";
+@import "pages/addPlayerDialog";
+@import "pages/confirmGameSignupDialog";
+@import "pages/editAvatarImageDialog";
+@import "pages/inputDialog";
+@import "pages/addBlogPostDialog";
+@import "pages/confirmDialog";
+@import "pages/games";
+@import "pages/gamePanel";
+@import "pages/blog";
+@import "pages/blogList";
+@import "pages/dashboard";
+@import "pages/about";
+@import "pages/settings";
+@import "pages/help";
+@import "pages/livegame";
+@import "pages/verify";
+@import "pages/badges";
+@import "pages/warriorReg";
+@import "pages/shop";
+@import "pages/profile";
+@import "pages/leaderboards";
+@import "pages/modCP";
+@import "pages/team";
+@import "pages/modDoc";
+@import "pages/tournament";
+@import "pages/passReset";
+@import "pages/rules";
+
+// 7. themes/
+@import "themes/theme";
+@import "themes/admin";
+
+// 8. components/toasts/
+@import "toasts/devwarsToast";
+@import "toasts/devwarsErrorToast";
+
+// 9. Directives
+@import "directives/rank";
+@import "directives/dashnav";
+
+// 10. Dialogs
+@import "dialogs/teams";
+
+
+@media only screen and (max-width: $inner-width) {		
+	header {
+		
+	}
+	
+	header nav, .inner, .featuredInner {
+		width: 95%;
+	}
+	
+	.featuredText { 
+		width: 28%;
+		padding-left: 0;
+		
+		h1 { font-size: 2rem; }
+		p { display: none; }
+	}
+	
+	.sidebarView {
+		.donate { padding: 10px 0; }
+		.donate p { display: none; }
+	}
+	
+	
+}
+
+@media only screen and (max-width: 840px) {
+	
+	body {
+		font-size: 1rem;
+	}
+	
+
+	header.header--desktop { display: none; }
+	header.header--mobile { display: block;}
+
+	header.header--mobile {
+		.header__right .button {
+			font-size: 0.8rem;
+		}
+	}
+	
+	.left, .right {
+		width: 100% !important;
+		float: none !important;
+	}
+	
+	.inner { margin-bottom: 0 !important; }
+	
+	
+	.md-dialog-container {
+		width: 100%;
+		max-width: 100%;
+		
+		md-dialog {
+			width: 95% !important;
+			max-width: 95% !important;
+		}
+		
+		.dialog-container {
+			width: 100% !important;
+			max-width: 100% !important;
+			padding: 20px 10px;
+		}
+	}
+	
+	.homeView {
+		
+		.featured .inner { 
+			padding: 80px 0;
+		}
+		
+		.featuredInner { display: none; }
+		.featuredText {
+			width: 100%;
+			position: relative;
+			padding: 0;
+			h1 { font-size: 4rem; }
+			span { font-size: 1.5rem; }
+			p { display: block; }
+		}
+		
+		.featured__stats, .surfacepro { display: none; }
+		
+		.featured-links__social, .or-seperator, .button.signup {
+			width: 90%;
+			display: block;
+			margin: 20px auto 10px auto;
+		}
+		
+		.inner {
+			
+			.main-content__play {
+				width: 100%;
+				padding: 0;
+				text-align: center;
+				border: none;
+				.play__text, .button { width: 100%; font-size: 1rem; display: block; }
+				.button { margin-top: 10px; }
+			}
+		}
+	}
+	
+	
+	.contactView {
+		.left { display: none; }
+		form { padding-left: 0; }
+		
+	}
+	
+	.aboutView {
+		margin-bottom: 0;
+		.right img { width: 50%; margin: 0 auto; display: block; }
+		ul.teamList { width: 100%; padding: 0; margin: 0; text-align: center; }
+		ul.teamList li { width: 50%; }
+		ul.teamList img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	
+	.dashboardView {
+		
+		.dashnavView { display: none; }
+		.dashboardHomeView {
+			.profile-badges, .profile-warrior {
+				width: 100%;
+				display: block;
+				margin-bottom: 40px;
+			}
+			.profile-activity { margin-top: 0; }
+			.profile-warrior .profile-warrior__signup h2 { font-size: 1rem; }
+		}
+		
+	}
+	
+	.badgesView {
+		
+		.badges-container {
+			width: 95%;
+			display: block;
+			margin: 0 auto;
+			
+			.badge-box {
+				width: 100%;
+				margin: 0 0 20px 0;
+			}
+			
+		}
+	}
+	
+	.leaderboardsView {
+		
+		.leaderRow {
+			span.level, span.score, span.xp, span.games, span.gamesWon, span.ratio {
+				display: none;
+			}
+
+			span.rank { width: 20%; }
+			span.username { width: 80%; }
+		}
+	}
+	
+	
+	.gamesView {
+		.gamesView--desktop { display: none; }
+		.gamesView--mobile { 
+			display: block; 
+			
+			.gameStat {	display: none; }
+		}
+	}
+	
+	.settingsView {
+		
+		
+	}
+
+	.help__sidebar { display: none; }
+	.help__answers-container { 
+		width: 100%; 
+		float: none; 
+		.help__answers { padding: 0 20px; }		
+	}
+	
+	footer {
+		.sitemap { display: none; }
+		.footer-legal { border-top: none; }
+	}
+	
+}
+
+
+
+
+

@@ -1,0 +1,36 @@
+.dashnavView {
+	ul.dashboard-nav {
+		list-style: none;
+		text-align: center;
+		color: $lgray;
+
+		li, span, .fa {
+			display: block;
+		}
+
+		li {
+			padding: 20px 0;
+			cursor: pointer;
+			&:hover { background-color: $dgray;	}
+			&.active {
+				border: 1px solid $accent-color;
+				color: $accent-color;
+				&:hover { background-color: transparent; }
+			}
+			&.disabled {
+				color: $gray;
+				&:hover { background-color: transparent; }
+			}
+		}
+
+		.fa {
+			font-size: 24px;
+			padding-bottom: 7px;
+		}
+
+		span {
+			font-size: 12px;
+			text-transform: uppercase;
+		}
+	}
+}

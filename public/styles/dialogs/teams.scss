@@ -1,0 +1,186 @@
+.team-dialog {
+	box-sizing: border-box;
+	padding: 40px;
+	max-width: 560px;
+	text-align: center;
+	border-radius: 5px !important;
+	background-color: $background-color !important;
+	border: 1px solid $gray;
+
+	.second-header {
+		padding: 20px 0 0;
+	}
+
+	.warning {
+		color: color($red, light);
+	}
+
+	.button {
+		margin: 10px auto;
+		
+		&.button--disabled {
+			background-color: $dgray;
+			color: $black;
+			pointer-events: none;
+		}
+	}
+
+	select {
+		margin: 10px auto;
+		padding: 0 10px;
+		height: 41px;
+		width: 270px;
+	}
+	
+	.dialog-row {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		&.dialog-btns {
+			text-align: right;
+			display: block;
+			margin-top: 20px;
+		}
+	}
+	
+	label {
+		display: block;
+		text-align: left;
+		margin-bottom: 10px;
+	}
+	
+	h2 {
+		text-align: center;
+		color: #fff;
+		font-weight: 200;
+		font-size: 24px;
+		padding-bottom: 20px;
+	}
+	
+	input {
+		width:100%;
+		margin-bottom: 10px;
+		padding: 10px;
+	}
+	
+	.dialog-row__left { width: 70%; }
+	.dialog-row__right { width: calc(30% - 20px); }
+	
+	.name-avail {
+		display: block;
+		text-align: right;
+		padding-bottom: 20px;
+		
+		&.name-avail--true { color: color($green, light); }
+		&.name-avail--false { color: color($red, light); }
+	}
+	
+	.field-error {
+		border: 1px solid color($red, light) !important;
+	}
+
+	&.invite-player {
+		padding: 40px 40px 20px;
+
+		input {
+			margin: 10px 0;
+		}
+	}
+
+
+	&.create-team {
+
+		.button {
+			margin-right: 20px;
+		}
+	}
+
+	&.team-join__game {
+
+		.player-selector {
+			margin: 20px 0;
+
+			h3 {
+				margin: 10px 0 !important;
+			}
+
+			span {
+				display: inline-block;
+				margin: 5px;
+				padding: 5px 20px;
+				border-radius: 5px;
+				cursor: pointer;
+
+				&:hover {
+					background: $dgray;
+				}
+
+				&.selected {
+					background: color($green, base);
+				}
+			}
+		}
+
+		.warning {
+			margin: 10px 0;
+		}
+	}
+
+	.dialog-container__dateBox {
+		display: block;
+		font-size: 0;
+		width: 235px;
+		border: 1px solid white;
+		border-radius: 5px;
+		margin: 10px auto;
+	}
+
+	.dateBox-date {
+		height: 54px;
+		width: 50px;
+		text-align: center;
+		display: inline-block;
+		vertical-align: top;
+		padding: 6px 0 6px 6px;
+
+		span:nth-of-type(1) { font-size: 13px; }
+		span:nth-of-type(2) { font-size: 24px; }
+	}
+
+	.dateBox-time {
+		width: auto;
+		margin: 0 20px;
+		height: 54px;
+		display: inline-block;
+		text-align: center;
+		line-height: 54px;
+
+		span { font-size: 24px; }
+	}
+	
+	
+	.teamInvite-row {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px;
+		
+		&:hover {
+			background-color: $dgray;
+		}
+		
+		&.selected {
+			border: 1px solid $accent-color;
+			color: $accent-color;
+		}
+		
+		.teamName { padding-right: 40px; }
+		.inviteDate { color: $gray; }
+	}
+	
+	.teamInviteScroll {
+		min-height: 300px;
+		overflow-y: scroll;
+	}
+	
+}

@@ -1,0 +1,92 @@
+///////////////////////////////////////////////
+// Color Variables              		     //
+///////////////////////////////////////////////
+
+//0a0a0a
+$background-color: #121212;
+$foreground-color: #191919;
+
+$main-color: #03a9f4;
+$accent-color: #e91e63;
+
+$purple-color: mix($main-color, $accent-color);
+
+$white: #d4d4d4;
+$lgray: #D3D3D3;
+$gray: #363636;
+$dgray: #252525;
+$xdgray: #161616;
+$black: #0e0e0e;
+
+$font-color: white;
+$devbit-color: #F8BF3F;
+
+$html-color: #f1672c;
+$css-color: #30a9dc;
+$js-color: #f1bf26;
+
+
+///////////////////////////////////////////////
+// Social Variables                          //
+///////////////////////////////////////////////
+
+$twitch-color: #6441A5;
+$youtube-color: #cd201f;
+$facebook-color: #3b5998;
+$twitter-color: #55acee;
+$gplus-color: #dd4b39;
+$reddit-color: #ff4500;
+$youtube-color: #cc181e;
+$github-color: #333333;
+$c9-color: #1AA6DA;
+
+$twitch-active: darken($twitch-color, 10%);
+$facebook-active: darken($youtube-color, 10%);
+$twitter-active: darken($facebook-color, 10%);
+$gplus-active: darken($gplus-color, 10%);
+$reddit-active: darken($reddit-color, 10%);
+$github-active: darken($github-color, 10%);
+
+
+///////////////////////////////////////////////
+// Rank Variables                            //
+///////////////////////////////////////////////
+
+$bronze: #A57E12;
+$silver: #929A9F;
+$gold: #F9D369;
+$platinum: #E5E4E2;
+$diamond: #69CBF9;
+
+$bronze-accent: darken($bronze, 20%);
+$silver-accent: darken($silver, 20%);
+$gold-accent: darken($gold, 20%);
+$platinum-accent: darken($platinum, 20%);
+$diamond-accent: darken($diamond, 20%);
+
+///////////////////////////////////////////////
+// DevWars Typography                        //
+///////////////////////////////////////////////
+
+$fontawesome: 'FontAwesome', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$oswald: 'Oswald', sans-serif;
+
+$line-height: 1.42857143;
+
+
+///////////////////////////////////////////////
+// DevWars Size Variables                    //
+///////////////////////////////////////////////
+
+$inner-width: 1020px;
+$header-mobile-height: 60px;
+
+
+$herocode-space : 55px;
+$herocode-bgsize: 25%;
+$herocode-dec : $herocode-bgsize / 100%;
+$herocode1-width: 1920px;
+$herocode1-height: 902px;
+$herocode2-width: 2167px;
+$herocode2-height: 901px;

@@ -1,0 +1,124 @@
+.rulesView {
+	text-align: center;
+
+	.description {
+		padding: 0 150px;
+
+		a {
+			color: $main-color;
+		}
+	}
+
+    .split-rules {
+        @extend %clear;
+        width: 100%;
+        .rules-box:first-of-type { float: left; }
+        .rules-box:last-of-type { float: right; }
+    }
+    
+	.rules-box {
+        width: calc(50% - 20px);
+		margin: 40px 0 0;
+		border: 1px solid $dgray;
+
+        em {
+            color: gray;    
+        }
+
+		.rules-header {
+			display: block;
+			font-size: 18px;
+			line-height: 50px;
+			background: $dgray;
+            border-bottom: 1px solid $accent-color;
+		}
+        
+        .scoring-header {
+            display: block;
+            width: 100%;
+            border-top: 1px solid $gray;
+            font-size: 18px;
+            padding: 15px 30px 0 15px;
+            color: $lgray;
+        }
+
+		ul {
+			padding: 20px 20px 10px 30px;
+            
+            &.scoring {
+                padding-top: 10px;
+                li {
+                    color: $lgray;
+                    strong { color: white; }
+                }
+            }
+		}
+
+		li {
+			margin: 0 0 10px;
+            padding: 5px;
+			text-align: left;
+            position: relative;
+            
+            &:hover {
+                & > .fa {
+                    display: inline-block;
+                }
+            }
+		}
+        
+
+        
+        &.rules-box--full {
+            width: 100%;
+        }
+        
+        &.rules-box--whitelisted {
+            .fa {
+                display: none;
+                position: absolute;
+                font-size: 14px;
+                color: $main-color;
+                right: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            li {
+                cursor: pointer;
+            }
+            
+            p {
+                border-top: 1px solid $gray;
+                padding: 15px 30px;
+                color: $lgray;
+            }
+        }
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	.rulesView {
+
+		.description {
+			padding: 20px 0;
+		}
+
+		.rules-box, .split_rules {
+            width: 100%;
+			float: none;
+			margin: 10px auto;
+
+			& + .rules-box {
+				float: none;
+			}
+		}
+        
+        .split-rules {
+            .rules-box {
+                width: 100%;
+            }
+        }
+	}
+}
+

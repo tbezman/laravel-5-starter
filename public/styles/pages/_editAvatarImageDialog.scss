@@ -1,0 +1,47 @@
+.md-dialog-container--editAvatarImageDialog{
+  border-radius: 5px !important;
+  background-color: $background-color !important;
+  border: 1px solid $gray;
+
+  .dialog-container {
+	text-align: center;
+  }
+
+	.cropArea {
+		width: 350px;
+		height: auto;
+		background: #E4E4E4;
+		overflow: hidden;
+		margin: 20px 0;
+	}
+	
+	.button {
+		width: auto;
+		text-align: center;
+		padding: 10px 20px;
+	}
+
+  .dialog-container__header {
+	text-align: center;
+	font-size: 22px;
+  }
+
+  .dialog-container__info {
+	text-align: center;
+  }
+
+  .cropArea {
+	overflow: hidden;
+	width: 350px;
+	height: 350px;
+	margin: 20px 0;
+	background: $background-color;
+  }
+
+  .button {
+	width: auto;
+	text-align: center;
+	padding: 10px 20px;
+  }
+
+}

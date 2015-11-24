@@ -1,0 +1,182 @@
+.tournament-page {
+
+	&.container {
+		width: auto;
+		max-width: 1170px;
+	}
+
+	.header {
+		position: relative;
+		text-align: center;
+		margin: 0 auto;
+		width: 900px;
+		font-size: 25px;
+		color: $devbit-color;
+
+		h1 {
+			display: inline-block;
+			vertical-align: middle;
+			font-weight: bold;
+		}
+
+		p {
+			position: absolute;
+			bottom: -4px;
+			right: 160px;
+			font-size: 20px;
+			color: $main-color;
+		}
+	}
+
+	.button-row {
+		text-align: center;
+
+		.button {
+			height: 40px;
+			line-height: 40px;
+			padding: 0;
+			width: 200px;
+			border-radius: 5px;
+		}
+	}
+
+	.header-trophy {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 20px;
+		font-size: 100px;
+	}
+
+	.information {
+		margin: 90px 0 0;
+	}
+
+	.info-box {
+		position: relative;
+		width: 33.33%;
+		float: left;
+		color: lighten($gray, 30%);
+
+		.div-inner {
+			padding: 0 20px;
+			text-align: center;
+		}
+
+		h2 {
+			padding: 0 0 15px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 20px;
+			color: #fff;
+		}
+
+		p {
+			padding: 0 0 10px;
+			text-align: left;
+		}
+
+		b {
+			color: $lgray;
+		}
+
+		img {
+			padding: 0 0 20px;
+			width: 100%;
+		}
+
+		a {
+			font-weight: bold;
+			color: $main-color;
+
+			&:hover {
+				color: $accent-color;
+			}
+		}
+
+		ul {
+			list-style-type: none;
+			text-align: center;
+			width: 100%;
+			margin: 5px 0;
+		}
+
+		li {
+			display: inline-block;
+			text-align: left;
+			margin: 0 5px;
+			color: #fff;
+		}
+
+		.tooltip {
+			position: absolute;
+			top: 180px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 240px;
+			padding: 5px 0;
+			border-radius: 4px;
+			opacity: 0;
+			color: #fff;
+			background: $accent-color;
+			transition: all 0.25s ease;
+		}
+
+		.button {
+			margin: 20px 0;
+			color: #fff;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+
+		&:hover {
+
+			.tooltip {
+				opacity: 1;
+				top: 150px;
+				transition: all 0.25s ease;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+
+	.tournament-page {
+
+		.header {
+			width: 320px;
+			font-size: 10px;
+
+			p {
+				position: static;
+			}
+		}
+
+		.header-trophy {
+			display: none;
+			font-size: 26px;
+
+			&:first-child {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	.tournament-page {
+
+		.info-box {
+			float: none;
+			margin: 0 auto 40px;
+			width: 100%;
+
+			.tooltip {
+				display: none;
+			}
+		}
+	}
+}

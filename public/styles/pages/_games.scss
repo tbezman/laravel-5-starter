@@ -1,0 +1,824 @@
+.gamesView {
+	
+	.gamesView--desktop { margin-top: 60px; }
+	.gamesView--mobile { display: none; }
+  .competeBox {
+    text-align: center;
+
+    .button {
+      margin-top: 5px;
+      padding: 5px 12px;
+      font-size: 14px;
+    }
+  }
+
+
+  .tabBox {
+    width: 100%;
+    display: block;
+    border-bottom: 4px solid $accent-color;
+    font-size: 0;
+
+    .tab {
+      width: 110px;
+      display: inline-block;
+      line-height: 35px;
+      text-align: center;
+      background: $dgray;
+      color: $lgray;
+      cursor: pointer;
+      vertical-align: bottom;
+      font-size: 14px;
+      @include transition(all, 100ms, ease-out);
+
+      &:hover {
+        background: $gray;
+        color: $white;
+      }
+
+      &.active {
+        background: $accent-color;
+        color: white;
+
+        &:hover { color: white; cursor: default; }
+      }
+    }
+    span.date {
+      font-size: 16px;
+      width: 30%;
+      display: inline-block;
+      line-height: 30px;
+      color: white;
+      margin-left: auto;
+      float:right;
+      text-align: right;
+      padding-right: 5px;
+    }
+  }
+
+
+  .gameContent {
+    @extend %clear;
+  }
+
+  .arrow {
+    display: inline-block;
+    padding: 8px;
+    border: 8px solid;
+    position: absolute;
+    top: calc(50% - 100px);
+    left: -48px;
+    top: -50px;
+    @include rotate(25);
+
+    .arrow__inner {
+      width: 100px;
+      height: 110px;
+    }
+  }
+
+  .header__title {
+    text-align:center;
+	  padding-bottom: 20px;
+	  i { padding-right: 10px; }
+  }
+  .gamesListColumn {
+    @extend %clear;
+    width: 35%;
+    float: left;
+
+	  .gameListColumn__container {
+		  height: 60vh;
+		  overflow-y: scroll;
+		  border: 1px solid $accent_color;
+	  }
+	  
+    .game {
+      background-color: $black;
+      padding: 10px;
+      margin-bottom: 2px;
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        background-color: $white;
+        color: $black;
+        .gameDate { border-color: $black; }
+      }
+
+      &.tournament {
+
+        .gameName {
+
+          span:nth-child(2) {
+            font-weight: 500;
+            color: $devbit-color;
+            font-family: $fontawesome;
+            
+            &:before {
+              content: "\f091";
+              margin: 0 10px 0 0;
+            }
+          }
+        }
+
+      }
+		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+      .moderateButton {
+        font-size: 62%;
+        margin-left: 20px;
+      }
+        
+        .nofiles-error {
+            color: color($red);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 7px;
+            top: 16px;
+            font-size: 22px;
+        }
+    }
+
+    .game--disabled {
+      background-color: $gray;
+      cursor: default;
+      &:hover {
+        background-color: $gray;
+        color: white;
+        .gameDate { border-color: white; }
+      }
+    }
+
+    .game--active {
+      background-color: $white;
+      color: $black;
+      cursor: default;
+
+      .gameDate { border-color: $black; }
+    }
+
+    .gameDate {
+      height: auto;
+      width: 50px;
+      text-align: center;
+      border-radius: 5px;
+      display: inline-block;
+      border: 1px solid white;
+      margin-right: 10px;
+      vertical-align: middle;
+
+      span:nth-child(1) {	font-size: 13px; }
+      span:nth-child(2) {	font-size: 24px; }
+    }
+
+
+    .gameName {
+      display: inline-block;
+      vertical-align: middle;
+      span { display: block; }
+      span:nth-child(1) {	font-size: 13px; }
+      span:nth-child(2) {
+        font-size: 24px;
+        font-weight: 200;
+      }
+    }
+
+    .gameMedia {
+      position: absolute;
+      right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+      .button {
+        font-size: 62%;
+        margin: 2px;
+      }
+
+      .button-blue {
+          border: 1px solid $main-color;
+      }
+
+      .button-red {
+          border: 1px solid $accent-color;
+      }
+
+      a.button {
+        font-size: 12px;
+      }
+      .fa-youtube-play {
+        display: none;
+        font-size: 28px;
+        position: relative;
+        margin: 0 5px;
+        color: $youtube-color;
+        &:after {
+          content: "";
+          background-color: #FFF;
+          height: 15px;
+          width: 20px;
+          position: absolute;
+          top: 6px;
+          right: 4px;
+          border-radius: 20%;
+          z-index: -1;
+        }
+        &.youtube--active { display: inline-block; }
+      }
+
+    }
+  }
+
+  .gameBanner {
+    border: 1px solid $accent-color;
+    padding: 25px;
+    overflow: hidden;
+    position: relative;
+
+    .scanlines {
+      background-image: url("http://www.blucitrus.com/images/bg/overlay.png");
+      position: absolute;
+      opacity: 0.8;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &.gameBanner--classic {
+      background: url('http://i.imgur.com/QfoYmEa.jpg');
+      background-size: cover;
+      background-position: 0 23%;
+    }
+
+    &.gameBanner--zen {
+      background: url('http://roomdecorideas.eu/wp-content/uploads/2014/12/zen-3.jpg');
+      background-position: 0 228px;
+      background-size: cover;
+    }
+
+    h2 {
+      display: inline;
+      position: relative;
+      z-index: 2;
+      & > span {
+        font-size: 11px;
+        vertical-align: middle;
+        font-weight: 200;
+        border: 1px solid;
+        margin-left: 10px;
+        padding: 3px 8px;
+        position: relative;
+        top: -2px;
+      }
+    }
+
+    .interactButton {
+      position: relative;
+      z-index: 2;
+      padding: 7px 30px;
+      display: inline-block;
+      text-align: center;
+      font-size: 13px;
+
+      &:hover {
+        background: $lgray;
+        color: $dgray;
+      }
+    }
+
+    .watchGame {
+      position: relative;
+      background: $gray;
+      color: $lgray;
+      float: right;
+      cursor: default;
+      &:after { content: "Recording Unavailable"; }
+
+      &:hover { color: $lgray; background: $gray; }
+
+      &.active {
+        background: $youtube-color;
+        color: white;
+        cursor: pointer;
+        &:after { content: "Watch on YouTube"; }
+        &:hover { color: $dgray; background: $lgray; }
+      }
+    }
+
+    .fa { padding-right: 10px; }
+  }
+
+
+
+  .gameStat {
+    @extend %clear;
+    width: calc(65% - 20px);
+    height: auto;
+    float: right;
+  }
+
+
+  .scoreBox {
+    @extend %clear;
+    width: 100%;
+    height: auto;
+    clear: both;
+    margin: 20px 0;
+    text-align: center;
+
+    .scoreRow {
+      width: calc(50% - 10px);
+      &:nth-child(1) { float: left; }
+      &:nth-child(2) { float: right; }
+    }
+
+    .scoreSlot {
+      display: inline-block;
+      vertical-align: middle;
+
+      &.totalPoints {	width: 20%;	}
+      &.totalObjectives {	width: 50%;	}
+      &.totalVotes {	width: 25%;	}
+
+      h2 {
+        font-weight: 200;
+        font-size: 36px;
+        padding: 0;
+        margin: 0;
+      }
+      span {
+        font-size: 11px;
+        font-weight: 200;
+        text-transform: uppercase;
+        vertical-align: top;
+      }
+    }
+
+    ul.tallyBar {
+      list-style: none;
+      font-size: 0;
+
+      li {
+        height: 30px;
+        width: 5px;
+        background: $gray;
+        display: inline-block;
+        margin-right: 10px;
+        &:last-child { margin-right: 0; }
+      }
+    }
+
+    .scoreRow--blue {
+      ul.tallyBar li.active {
+        background: $main-color;
+      }
+    }
+
+    .scoreRow--red {
+      ul.tallyBar li.active {
+        background: $accent-color;
+      }
+    }
+  }
+
+  .teamBox {
+    @extend %clear;
+    width: 100%;
+    height: auto;
+
+    .team {
+      width: calc(50% - 10px);
+      display: inline-block;
+      vertical-align: top;
+      font-size: 0;
+      border: 1px solid;
+      margin-bottom: 20px;
+
+      .teamHeader {
+        width: 100%;
+        padding: 15px;
+        background: $black;
+        font-size: 14px;
+        text-transform: uppercase;
+        overflow: hidden;
+        position: relative;
+        border-bottom: 1px solid;
+
+        h3 {
+         font-family: $oswald;
+			color: $xdgray;
+			font-size: 18px;
+			top: 14px;
+			position: absolute;
+        }
+        span.event {
+          padding: 2px 7px;
+          border: 1px solid;
+			float: right;
+        }
+
+      }
+      .teamPlayer {
+        width: 100%;
+        height: auto;
+        display: block;
+        font-size: 0;
+        background: $xdgray;
+        padding-right: 15px;
+        margin-bottom: 1px;
+
+        &:last-child { margin-bottom: 0; }
+        &:hover {
+          background: $dgray;
+        }
+
+        span { font-size: 14px; }
+        span.role {
+          width: 58px;
+          background: rgba(0, 0, 0, 0.75);
+          padding: 20px 0;
+          display: inline-block;
+          text-align: center;
+        }
+        span.player { padding: 15px; }
+        span.score {
+          float: right;
+          padding: 20px 0;
+
+          &:after {
+            content: ' XP';
+          }
+        }
+      }
+    }
+
+    .teamFiles {
+      @extend %clear;
+      width: 100%;
+      height: auto;
+      clear: both;
+      margin: 20px 0;
+
+      .fileBox {
+        width: calc(50% - 10px);
+        &:nth-child(1) { float: left; }
+        &:nth-child(2) { float: right; }
+      }
+
+      a.button {
+        width: 50%;
+        background: $black;
+        font-size: 11px;
+        padding: 12px 0;
+        text-transform: uppercase;
+        text-align: center;
+        float: left;
+        &:nth-child(1) { border-right: 2px solid $background-color; }
+        &:nth-child(2) { border-left: 2px solid $background-color; }
+        &:hover {
+          background: $white;
+          color: $black;
+        }
+      }
+    }
+
+    .team--blue {
+      float: left;
+      border: 1px solid $main-color;
+      border-bottom: 5px solid $main-color;
+
+      .teamHeader {
+        border-color: $main-color;  
+      }
+
+      span.role {
+        color: $main-color;
+      }
+
+      .arrow {
+        border-color: $main-color;
+      }
+
+      .arrow__inner {
+        background-color: $main-color;
+      }
+    }
+
+    .team--red {
+      float: right;
+      border: 1px solid $accent-color;
+      border-bottom: 5px solid $accent-color;
+
+      .teamHeader {
+        border-color: $accent-color;  
+      }
+
+      span.role {
+        color: $accent-color;
+      }
+
+      .arrow {
+        border-color: $accent-color;
+      }
+
+      .arrow__inner {
+        background-color: $accent-color;
+      }
+    }
+
+    .team--win {
+		span.event { border-color: color($green, light); color: color($green, light); }
+    span.score { color: color($green, light); }
+    }
+
+    .team--lose {
+		span.event { border-color: color($red, light); color: color($red, light); }
+    span.score { color: color($green, light); }
+    }
+  } /* .teamBox */
+
+
+  .objBox {
+    width: 100%;
+    margin-bottom: 20px;
+
+    ul.objList {
+      list-style: none;
+      text-align: center;
+      margin-top: 10px;
+
+      li {
+        width: 100%;
+        display: block;
+        background: transparent;
+        position: relative;
+        padding: 15px 0;
+        &:nth-child(even) {	background: rgba(0, 0, 0, 0.10); }
+        &:last-child {
+          color: yellow;
+          .active {
+            background: yellow;
+          }
+        }
+        span {
+          width: 80%;
+          margin: 0 auto;
+          display: block;
+          font-size: 13px;
+        }
+      }
+    }
+    .objSquare {
+      height: 20px;
+      width: 20px;
+      background: $gray;
+      position: absolute;
+      top: calc(50% - 10px);
+
+
+      &.active {
+        border: 3px solid $gray;
+      }
+
+      &.objSquare--blue {
+        left: 15px;
+        &.active {
+          background: $main-color;
+        }
+      }
+      &.objSquare--red {
+        right: 15px;
+        &.active {
+          background: $accent-color;
+        }
+      }
+    }
+  }
+
+  .gameHeader {
+	  background: $black;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 200;
+    border: 1px solid $gray;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+
+    .objPoint {
+      position: absolute;
+      font-weight: bold;
+      &.objPoint--blue { left: 20px; color: $main-color; }
+      &.objPoint--red { right: 20px; color: $accent-color; }
+      .bonusPoint {
+        display: none;
+        color: yellow;
+        padding: 2px 8px;
+        font-weight: 200;
+        border: 1px solid #FF0;
+        font-size: 10px;
+        margin: 0 15px;
+        top: -2px;
+        position: relative;
+        &.active {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .chartContainer {
+    width: 9vw;
+    height: 9vw;
+    position: relative;
+  }
+
+	
+	
+	
+	
+	
+	
+.pieRow {
+	@include flex;
+	justify-content: space-between;
+}
+	
+.pieBox {
+	width: 9vw;
+	height: 9vw;
+	background: $dgray;
+	display: inline-block;
+	margin-top: 20px;
+	overflow:hidden;		
+	font-size: 0;
+	border-radius: 50%;
+	position: relative;
+}
+
+.innerPie {
+	height: 7vw;
+	width: 7vw;
+	background: $black;
+	border-radius: 50%;
+	text-align: center;
+	overflow: hidden;
+	position: absolute;
+	left: 11%;
+	top: 11%;
+
+	@include flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column; /* column | row */
+
+	span { font-size: 11px; color: $lgray; }
+	h3 { font-size: 22px; padding: 2px 0 3px 0; }
+}
+
+
+	
+	.gamesView--mobile {
+		margin-top: 40px;
+		
+		.gamesView__header { text-align: center; }
+		.gameBanner {
+			padding: 15px 0;	
+			text-align: center;
+			
+			.interactButton { display: none; }
+			h2 { 
+				font-size: 2rem; 
+				vertical-align: middle; 
+				
+				span { font-size: 1rem; }
+			}
+		}
+		
+		.gamesListColumn, .gameStat {
+			width: 100%;
+			float: none;
+		}
+		
+		.gamesListColumn .gameMedia {
+			right: 10px;
+			.fa-youtube-play { margin: 0; }
+		}
+		
+		.gamesListColumn { overflow: hidden; }
+		.gamesListColumn .game--active:after {
+			display: none;
+			
+		}
+		
+		.gameStat {
+			border-bottom: 1px solid $gray;
+		}
+		.teamBox .team {
+			width: 100%;
+			display: block;
+		}
+		
+		.scoreBox .scoreRow:nth-child(1) { color: $main-color; }
+		.scoreBox .scoreRow:nth-child(2) { color: $accent-color; }
+		
+		.teamFiles {
+			.fileBox { width: 100%; }
+			a.button { 
+				width: calc(50% - 10px);
+				border: none;
+			}
+			a.button:nth-child(1) { margin-right: 20px; }
+		}
+		
+		.chartContainer {
+			width: 100%;
+			height: auto;
+			overflow: hidden;
+			
+			.innerPie {
+				height: 46vw;
+				width: 46vw;
+				top: 7%;
+				left: 27%;
+				
+				h3 { font-size: 3rem; }
+				span { font-size: 2rem; }
+			}
+		}
+		
+	}
+	
+  .votes-container {
+    float: left;
+    width: 320px;
+    font-size: 0;
+    border-right: 1px solid #363636;
+    
+    &.func-vote {
+      float: right;
+      border: none;
+    }
+    
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+      padding: 15px 0;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 400;
+    }
+    
+    span {
+      display: inline-block;
+      width: 34px;
+      line-height: 20px;
+      vertical-align: middle;
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+    }
+    
+    .red-team__votes {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 250px;
+      height: 20px;
+      background: #e91e63;
+    }
+    
+    .blue-team__votes {
+      height: 100%;
+      background: #03a9f4;
+    }
+	  
+	  .total_votes {
+		  font-size: 14px;
+		  text-align: center;
+		  margin-top: 15px;
+		  color: $lgray;
+	  }
+    
+    .separator {
+      position: absolute;
+      top: -5px;
+      left: 33%;
+      margin-left: -1px;
+      width: 2px;
+      height: 30px;
+      background: #fff;
+    }
+    
+    .separator-right {
+      left: 66%;
+      margin-left: 0;
+    }
+  }
+}

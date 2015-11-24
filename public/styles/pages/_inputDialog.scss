@@ -1,0 +1,57 @@
+.md-dialog-container--inputDialog {
+  border-radius: 5px !important;
+  background-color: $background-color !important;
+  border: 1px solid $gray;
+
+  .conflicts {
+    margin: 20px;
+
+    .conflict {
+      color: red;
+    }
+  }
+
+  .dialog-container__header {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .dialog-container__infoList {
+    list-style-type: none;
+
+    padding-top: 20px;
+
+    li {
+      padding: 5px;
+    }
+  }
+
+  .dialog-container__info {
+    text-align: center;
+  }
+
+  .dialog-container__dateBox {
+    height: auto;
+    width: 50px;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+    border: 1px solid white;
+    margin-right: 10px;
+    vertical-align: middle;
+    padding: 5px;
+
+    span:nth-child(1) {	font-size: 12px; }
+    span:nth-child(2) {	font-size: 24px; }
+  }
+
+  .dialog-container__actions {
+    text-align: center;
+
+    margin-top: 20px;
+
+    button {
+      margin: 10px;
+    }
+  }
+}
